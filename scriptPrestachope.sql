@@ -1,11 +1,6 @@
-#------------------------------------------------------------
-#        Script MySQL.
-#------------------------------------------------------------
-
-
-#------------------------------------------------------------
-# Table: Clients
-#------------------------------------------------------------
+DROP DATABASE IF EXISTS prestachope3;
+CREATE DATABASE prestachope3;
+USE prestachope3;
 
 CREATE TABLE Clients(
         idClient Int  Auto_increment  NOT NULL ,
