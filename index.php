@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<title>World Bounty Hunters Agency</title>
-	</head>
-	<body>
+<head>
+    <meta charset="utf-8" />
+    <title>PrestaChope !</title>
+</head>
+<body>
 
 <?php
-	include_once("tools/SuperControleur.php");
-    $page = "connexion";
+include_once("tools/SuperControleur.php");
+$page = "viewArticleWithoutSignIn";
 
-  	if(!empty($_GET['page'])) {
-		$page = $_GET['page'];
-	}
+if(!empty($_GET['page'])) {
+    $page = $_GET['page'];
+}
 
-
-  	SuperControleur::callPage($page);
-
-
+SuperControleur::callPage($page);
 ?>
 
-
-
-	</body>
+</body>
 </html>
