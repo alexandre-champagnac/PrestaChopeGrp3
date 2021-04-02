@@ -14,8 +14,13 @@
 		$page = $_GET['page'];
 	}
 
+
   	SuperControleur::callPage($page);
+
+
 ?>
+
+
 
 	</body>
 </html>
