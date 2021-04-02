@@ -52,7 +52,8 @@ CREATE TABLE Commande(
 #------------------------------------------------------------
 
 CREATE TABLE categorie(
-        idCategorie Int  Auto_increment  NOT NULL
+        idCategorie Int  Auto_increment  NOT NULL ,
+        nom         VARCHAR NOT NULL 
 	,CONSTRAINT categorie_PK PRIMARY KEY (idCategorie)
 )ENGINE=InnoDB;
 
