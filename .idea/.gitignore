@@ -2,7 +2,11 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
+<<<<<<< HEAD
 /../../../../../../../../:\Users\alexbts\OneDrive - Ensemble Scolaire LA SALLE Clermont Ferrand\Documents\GitHub\PrestaChopeGrp3\.idea/dataSources/
+=======
+/../../../../../:\xampp\htdocs\PrestaChopeGrp3\.idea/dataSources/
+>>>>>>> 2fd73969f97e7fba8effd720852d6bcb20325a57
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
