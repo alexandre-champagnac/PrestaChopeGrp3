@@ -11,6 +11,10 @@ class ClientDAO
         if(isset($result)){
             if($result['password'] == $password){
                 $client = new ClientDTO($result['idClient'], $result['prenom'], $result['nom'], $result['pseudo'], $result['password'], $result['mail'], $result['adresse'], $result['avatar'], $result['cagnotte'], $result['isAdmin']);
+                return $client;
+            }
+            else{
+                return null;
             }
         }
 
