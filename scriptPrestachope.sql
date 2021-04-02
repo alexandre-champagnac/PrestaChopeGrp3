@@ -24,7 +24,7 @@ CREATE TABLE Clients(
 CREATE TABLE Produit(
         idProduit      Int  Auto_increment  NOT NULL ,
         prix           Float NOT NULL ,
-        nom            VARCHAR NOT NULL ,
+        nom            VARCHAR(50) NOT NULL ,
         datePeremption Date NOT NULL ,
         quantite       Int NOT NULL
 	,CONSTRAINT Produit_PK PRIMARY KEY (idProduit)
@@ -53,7 +53,7 @@ CREATE TABLE Commande(
 
 CREATE TABLE categorie(
         idCategorie Int  Auto_increment  NOT NULL ,
-        nom         VARCHAR NOT NULL 
+        nom         VARCHAR(50) NOT NULL
 	,CONSTRAINT categorie_PK PRIMARY KEY (idCategorie)
 )ENGINE=InnoDB;
 
