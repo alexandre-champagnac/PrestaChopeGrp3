@@ -6,18 +6,17 @@ class SuperControleur
     public static function callPage($page){
         switch ($pages){
             case "connexion" :
-                include_once("pages/connexion/controleurConnexion.php");
+                include_once("pages/connexion/ControleurConnexion.php");
             case"filtres":
-                include_once("pages/filtres/controleurFiltres");
+                include_once("pages/filtres/ControleurFiltres.php");
             case"commande":
-                include_once ("pages/commande/controleirCommande");
+                include_once ("pages/commande/ControleurCommande.php");
             case"compte":
-                include_once ("pages/infoCompte/controleurCompte");
+                include_once ("pages/infoCompte/ControleurInfoCompte.php");
             case"contact":
-                include_once ("pages/contact/controleurContact");
+                include_once ("pages/formulaireContacte/ControleurFormulaireContacte.php");
             case"commantaire":
-                include_once ("pages/commantaire/controleurCommande");
-
+                include_once ("pages/commentaires/ControleurCommentaires.php");
         }
     }
 }
