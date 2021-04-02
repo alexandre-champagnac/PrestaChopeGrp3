@@ -1,7 +1,7 @@
 <?php
 
 
-class Commentaire
+class CommentaireDTO
 {
     private $idCommentaire;
     private $content;
@@ -9,7 +9,7 @@ class Commentaire
     private $idClient;
 
     /**
-     * Commentaire constructor.
+     * CommentaireDTO constructor.
      * @param $idCommentaire
      * @param $content
      * @param $idProduit

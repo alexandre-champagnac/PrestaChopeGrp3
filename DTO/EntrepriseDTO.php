@@ -1,13 +1,13 @@
 <?php
 
 
-class Entreprise
+class EntrepriseDTO
 {
     private $isEntreprise;
     private $Tresorie;
     private $nbCommande;
     /**
-     * Entreprise constructor.
+     * EntrepriseDTO constructor.
      * @param $isEntreprise
      * @param $Tresorie
      * @param $nbCommande

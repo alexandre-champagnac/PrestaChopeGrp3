@@ -1,7 +1,7 @@
 <?php
 
 
-class Client
+class ClientDTO
 {
     private $idClient;
     private $nom;
@@ -15,7 +15,7 @@ class Client
     private $isAdmin;
 
     /**
-     * Client constructor.
+     * ClientDTO constructor.
      * @param $idClient
      * @param $nom
      * @param $prenom

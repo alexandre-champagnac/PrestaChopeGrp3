@@ -1,7 +1,7 @@
 <?php
 
 
-class Commande
+class CommandeDTO
 {
     private $idCommande;
     private $nbProduit;
@@ -10,7 +10,7 @@ class Commande
     private $idClient;
 
     /**
-     * Commande constructor.
+     * CommandeDTO constructor.
      * @param $idCommande
      * @param $nbProduit
      * @param $montant

@@ -1,7 +1,7 @@
 <?php
 
 
-class Produit
+class ProduitDTO
 {
     private $idProduit;
     private $nomProduit;
@@ -9,7 +9,7 @@ class Produit
     private $quantité;
 
     /**
-     * Produit constructor.
+     * ProduitDTO constructor.
      * @param $idProduit
      * @param $nomProduit
      * @param $datePeremption

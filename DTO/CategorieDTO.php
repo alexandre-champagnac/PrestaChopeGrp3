@@ -1,13 +1,13 @@
 <?php
 
 
-class Categorie
+class CategorieDTO
 {
     private $idCategorie;
     private $nom;
 
     /**
-     * Categorie constructor.
+     * CategorieDTO constructor.
      * @param $idCategorie
      * @param $nom
      */
