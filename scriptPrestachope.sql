@@ -24,6 +24,7 @@ CREATE TABLE Clients(
 CREATE TABLE Produit(
         idProduit      Int  Auto_increment  NOT NULL ,
         prix           Float NOT NULL ,
+        nom            VARCHAR NOT NULL ,
         datePeremption Date NOT NULL ,
         quantite       Int NOT NULL
 	,CONSTRAINT Produit_PK PRIMARY KEY (idProduit)
