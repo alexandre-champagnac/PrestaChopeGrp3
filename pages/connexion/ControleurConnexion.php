@@ -8,26 +8,28 @@ class ControleurConnexion
 
     public function authenticate($pseudo, $mdp)
     {
-        include_once ("DAO/ClientDAO.php");
+        include_once("DAO/ClientDAO.php");
         $verif = ClientDAO::connexion($pseudo, $mdp);
-        var_dump($verif);
+        if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
 
-        if ($verif)
-        {
-            $_SESSION['idClient'] = $verif->getIdClient();
-            $_SESSION['prenom'] = $verif->getPrenom();
-            $_SESSION['nom'] = $verif->getNom();
-            $_SESSION['pseudo'] = $verif->getPseudo();
-            $_SESSION['mail'] = $verif->getMail();
-            $_SESSION['avatar'] = $verif->getAvatar();
-            $_SESSION['cagnotte'] = $verif->getCagnotte();
-            $_SESSION['isAdmin'] = $verif->getIsAdmin();
-            $_SESSION['adresse'] = $verif->getAdresse();
-            return true;
-        }
-        else
-        {
-            return false;
+            if ($verif->authenticate($_POST['pseudo'], $_POST['mdp'])) {
+                $verif->redirectUser();
+            }
+
+            if ($verif) {
+                $_SESSION['idClient'] = $verif->getIdClient();
+                $_SESSION['prenom'] = $verif->getPrenom();
+                $_SESSION['nom'] = $verif->getNom();
+                $_SESSION['pseudo'] = $verif->getPseudo();
+                $_SESSION['mail'] = $verif->getMail();
+                $_SESSION['avatar'] = $verif->getAvatar();
+                $_SESSION['cagnotte'] = $verif->getCagnotte();
+                $_SESSION['isAdmin'] = $verif->getIsAdmin();
+                $_SESSION['adresse'] = $verif->getAdresse();
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

@@ -6,18 +6,16 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
+    <form action="index.php?page=connexion" method="post">
+        <div>
+            <label for="pseudo">Identifiant :</label>
+            <input type="text" id="pseudo" name="pseudo">
 
+            <label for="password">Mots De Passe:</label>
+            <input type="password" id="mdp" name="mdp">
 
-<form action="" method="post">
-    <div>
-        <label for="pseudo">Identifiant :</label>
-        <input type="text" id="pseudo" name="pseudo">
-
-        <label for="password">Mots De Passe:</label>
-        <input type="password" id="mdp" name="mdp">
-
-        <p><input type="submit" value="OK"></p>
-    </div>
-</form>
+            <p><input type="submit" value="OK"></p>
+        </div>
+    </form>
 </body>
 </html>
