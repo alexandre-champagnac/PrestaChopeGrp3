@@ -29,6 +29,8 @@ class SuperControleur
 
             case"compte":
                 include_once ("pages/infoCompte/ControleurInfoCompte.php");
+                $instance = new ControleurInfoCompte();
+
 
             case"contact":
                 include_once ("pages/formulaireContacte/ControleurFormulaireContacte.php");

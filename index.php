@@ -29,6 +29,7 @@
 	        }
 	        elseif(isset($_SESSION['pseudo'])){ ?>
 	            <button href="" class="button">se deconnecter</button>
+                <button href="tools/SuperControleur.php?page=compte" class="button">Modifier Votre Compte</button>
 	            <?php
 	        }
         ?>
