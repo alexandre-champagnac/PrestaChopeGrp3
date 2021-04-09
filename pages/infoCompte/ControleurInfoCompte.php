@@ -10,7 +10,8 @@ class ControleurInfoCompte
     public function authenticate($pseudo, $mdp)
     {
         include_once("DAO/ClientDAO.php");
-        $verif = ClientDAO::connexion($pseudo, $mdp);
+
+
 
     }
 
