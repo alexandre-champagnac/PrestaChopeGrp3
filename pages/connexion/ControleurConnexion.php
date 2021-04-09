@@ -1,6 +1,4 @@
 <?php
-
-
 class ControleurConnexion
 {
     public function includeView()
@@ -10,6 +8,7 @@ class ControleurConnexion
 
     public function authenticate($pseudo, $mdp)
     {
+        include_once ("DAO/ClientDAO.php");
         $verif = ClientDAO::connexion($pseudo, $mdp);
         var_dump($verif);
 

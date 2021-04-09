@@ -10,7 +10,10 @@ class SuperControleur
             case "connexion" :
                 include_once("pages/connexion/ControleurConnexion.php");
                 $instance = new ControleurConnexion();
-                $instance->includeView();
+                //$instance->includeView();
+            $mdp="a";
+            $iden="a";
+                $instance->authenticate($iden,$mdp);
 
             case"filtres":
                 include_once("pages/filtres/ControleurFiltres.php");
