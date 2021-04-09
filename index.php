@@ -9,7 +9,6 @@
 <?php
     $page = "connexion";
 	include_once("tools/SuperControleur.php");
-
   	if(!empty($_GET['page'])) {
 		$page = $_GET['page'];
 	}

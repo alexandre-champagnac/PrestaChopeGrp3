@@ -5,7 +5,7 @@ class ControleurConnexion
 {
     public function includeView()
     {
-        include_once "connexion.php";
+        include_once "pages/connexion/connexion.php";
     }
 
     public function authenticate($pseudo, $mdp)
