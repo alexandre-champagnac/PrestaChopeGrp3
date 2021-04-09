@@ -1,39 +1,41 @@
 <?php
-
-include_once('tools/DatabaseLinker.php');
-include_once('DAO/DatabaseUserDAO.php');
-
-class ControleurConnexionr{
-
-
-
-    public function includeView(){
-
-        include_once('pages/connexion/view/login.php');
-
+class ControleurConnexion
+{
+    public function includeView()
+    {
+        include_once "pages/connexion/connexion.php";
     }
 
-    public static function authenticate($username, $password){
+    public function authenticate($pseudo, $mdp)
+    {
+        include_once("DAO/ClientDAO.php");
+        $verif = ClientDAO::connexion($pseudo, $mdp);
+        if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
+        {
 
-        //le DAO est pas encore créer, lenaig fait les redirections (les include_once);
-        $user = ClientDAO::getUser($username, $password);
-        if($user != null){
-            $_SESSION['pseudo'] = $user -> getUserPseudo();
+            if ($verif->authenticate($_POST['pseudo'], $_POST['mdp'])) {
+                $verif->redirectUser();
+            }
 
-            //if isset de _session pseudo = connecté
-
-            return true;
+            if ($verif) {
+                $_SESSION['idClient'] = $verif->getIdClient();
+                $_SESSION['prenom'] = $verif->getPrenom();
+                $_SESSION['nom'] = $verif->getNom();
+                $_SESSION['pseudo'] = $verif->getPseudo();
+                $_SESSION['mail'] = $verif->getMail();
+                $_SESSION['avatar'] = $verif->getAvatar();
+                $_SESSION['cagnotte'] = $verif->getCagnotte();
+                $_SESSION['isAdmin'] = $verif->getIsAdmin();
+                $_SESSION['adresse'] = $verif->getAdresse();
+                return true;
+            } else {
+                return false;
+            }
         }
-
-        return false;
-
     }
 
-    public function redirectUser(){
-
-        header("Location: index.php?page=viewArticle");
+    public function redirectUser()
+    {
+        header("Location: index.php?page=listeProduit");
     }
-
 }
-
-?>

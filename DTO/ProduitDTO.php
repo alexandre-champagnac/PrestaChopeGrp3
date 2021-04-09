@@ -4,6 +4,8 @@
 class ProduitDTO
 {
     private $idProduit;
+    private $prix;
+    private $photo;
     private $nomProduit;
     private $datePeremption;
     private $quantité;
@@ -15,12 +17,46 @@ class ProduitDTO
      * @param $datePeremption
      * @param $quantité
      */
-    public function __construct($idProduit, $nomProduit, $datePeremption, $quantité)
+    public function __construct($idProduit, $nomProduit, $datePeremption, $quantité,$prix,$photo)
     {
         $this->idProduit = $idProduit;
         $this->nomProduit = $nomProduit;
         $this->datePeremption = $datePeremption;
         $this->quantité = $quantité;
+        $this->prix =$prix;
+        $this->photo = $photo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * @param mixed $prix
+     */
+    public function setPrix($prix): void
+    {
+        $this->prix = $prix;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param mixed $photo
+     */
+    public function setPhoto($photo): void
+    {
+        $this->photo = $photo;
     }
 
     /**

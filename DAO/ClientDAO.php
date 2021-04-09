@@ -1,9 +1,11 @@
 <?php
-
+include_once 'tools/DatabaseLinker.php';
 include_once 'DTO/ClientDTO.php';
-
 class ClientDAO
 {
+    public function redirectUser(){
+        header('Location(index.php?page=accueil)');
+    }
     public function register($prenom, $nom, $pseudo, $password, $mail, $adresse)
     {
         $bdd = DatabaseLinker::getConnexion();
@@ -11,13 +13,13 @@ class ClientDAO
         $reponse->execute(array($prenom, $nom, $pseudo, $password, $mail, $adresse));
     }
 
-    public function connexion($pseudo, $password)
+    public static function connexion($pseudo, $password)
     {
         $bdd = DatabaseLinker::getConnexion();
         $reponse = $bdd->prepare('SELECT * from clients WHERE pseudo = ?');
         $reponse->execute(array($pseudo));
         $result = $reponse->fetch();
-        if (isset($result)) {
+        if (isset($result['pseudo'])) {
             if ($result['password'] == $password) {
                 $client = new ClientDTO($result['idClient'], $result['prenom'], $result['nom'], $result['pseudo'], $result['password'], $result['mail'], $result['adresse'], $result['avatar'], $result['cagnotte'], $result['isAdmin']);
                 return $client;
