@@ -31,6 +31,16 @@ class SuperControleur
                 include_once ("pages/infoCompte/ControleurInfoCompte.php");
                 $instance = new ControleurInfoCompte();
 
+                if(!empty($_POST['pseudo']) || !empty($_POST['mdp']))
+                {
+                    if ($instance->authenticate($_POST['pseudo'], $_POST['mdp'],$_POST['nom'],$_POST['pseudo'],$_POST['pseudo'],$_POST['pseudo'],))
+                    {
+                        $instance->redirectUser();
+                    }
+                }
+                $instance->includeView();
+                break;
+
 
             case"contact":
                 include_once ("pages/formulaireContacte/ControleurFormulaireContacte.php");
