@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
-    <title>World Bounty Hunters Agency</title>
+    <title>Prestachope</title>
 </head>
 <body>
 <header>
@@ -28,8 +28,8 @@
 	            <?php
 	        }
 	        elseif(isset($_SESSION['pseudo'])){ ?>
-	            <button href="" class="button">se deconnecter</button>
-                <button onclick="document.location.href='tools/SuperControleur.php?page=compte'" class="button">Modifier Votre Compte</button>
+	            <button onclick="document.location.href='index.php?page=deconnexion" class="button">se deconnecter</button>
+                <button onclick="document.location.href='index.php?page=compte'" class="button">Modifier Votre Compte</button>
 	            <?php
 	        }
         ?>
