@@ -2,7 +2,7 @@
 
 class DatabaseLinker
 {
-    private static $url = 'mysql:host=localhost; dbname=prestachope3; charset=utf8';
+    private static $url = 'mysql:host=localhost; dbname=prestachope; charset=utf8';
     private static $nomutilisateur = "root";
     private static $mdp = "";
     private static $pdo;

@@ -9,6 +9,7 @@
     <div class="banniere">
         <img class="" src="" alt=""/>
         <?php
+        session_start();
 	        $page = "connexion";
 		    include_once("tools/SuperControleur.php");
 		    if(!empty($_GET['page']))
