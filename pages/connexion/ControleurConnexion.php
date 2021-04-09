@@ -10,14 +10,7 @@ class ControleurConnexion
     {
         include_once("DAO/ClientDAO.php");
         $verif = ClientDAO::connexion($pseudo, $mdp);
-        if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
-        {
-
-            if ($verif->authenticate($_POST['pseudo'], $_POST['mdp'])) {
-                $verif->redirectUser();
-            }
-
-            if ($verif) {
+                if ($verif) {
                 $_SESSION['idClient'] = $verif->getIdClient();
                 $_SESSION['prenom'] = $verif->getPrenom();
                 $_SESSION['nom'] = $verif->getNom();
@@ -28,11 +21,11 @@ class ControleurConnexion
                 $_SESSION['isAdmin'] = $verif->getIsAdmin();
                 $_SESSION['adresse'] = $verif->getAdresse();
                 return true;
-            } else {
+            }
+            else {
                 return false;
             }
         }
-    }
 
     public function redirectUser()
     {

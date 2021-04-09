@@ -8,6 +8,7 @@ class ClientDAO
     }
     public function register($prenom, $nom, $pseudo, $password, $mail, $adresse)
     {
+        $password = sha1($password);
         $bdd = DatabaseLinker::getConnexion();
         $reponse = $bdd->prepare('INSERT INTO clients(nom,prenom,pseudo,password,mail,adresse) VALUES(?,?,?,?,?,?)');
         $reponse->execute(array($prenom, $nom, $pseudo, $password, $mail, $adresse));
@@ -45,5 +46,17 @@ class ClientDAO
             return $tab;
         }
         return null;
+    }
+    public function modifPassword($client){
+            $password = sha1($client->getPassword);
+            $bdd = DatabaseLinker::getConnexion();
+            $reponse = $bdd->prepare('UPDATE client SET nom = ?,prenom = ?, pseudo = ?, password = ?, mail = ? adresse = ? WHERE idClient = ?');
+            $reponse->execute(array($client->getNom,$client->getPrenom,$client->getPseudo,$password,$client->getMail,$client->getAdresse,$client->getIdClient));
+
+    }
+    public function modiAvatar($idClient,$chemin){
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('UPDATE client SET avatar = ');
+        $reponse->execute(array($chemin, $idClient));
     }
 }
