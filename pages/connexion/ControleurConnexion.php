@@ -10,7 +10,8 @@ class ControleurConnexion
     {
         include_once("DAO/ClientDAO.php");
         $verif = ClientDAO::connexion($pseudo, $mdp);
-        if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
+        if (!empty($_POST['pseudo']) && !empty($_POST['mdp']))
+        {
 
             if ($verif->authenticate($_POST['pseudo'], $_POST['mdp'])) {
                 $verif->redirectUser();
