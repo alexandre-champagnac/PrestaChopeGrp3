@@ -41,4 +41,16 @@ class ProduitDAO
         $reponse = $bdd->prepare('UPDATE produit SET prix = ?, nom = ?,photo = ?, datePeremption = ?, quantite = ? WHERE idProduit = ?');
         $reponse->execute(array($produit->getPrix,$produit->getNom,$produit->getPhoto,$produit->getDateperemption,$produit->getQuantite,$produit->getIdProduit));
     }
+    public function produitCategorie($idCategorie){
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('SELECT * FROM produit as po inner join appartient as appart on po.idProduit = appart.idProduit inner join categorie as cate on appart.idCategorie = cate.idCategorie WHERE cate.idCategorie = ?');
+        $reponse->execute(array($idCategorie));
+        $result = $reponse->fetchAll;
+        $tab = array();
+        foreach ($result as $value) {
+            $produit = new ProduitDTO($value['idProduit'], $value['nom'], $value['datePeremption'], $value['quantite'],$value['prix'],$value['photo']);
+            $tab = $produit;
+        }
+        return $tab;
+    }
 }
