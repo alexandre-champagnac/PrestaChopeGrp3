@@ -7,7 +7,7 @@
 <body>
 <header>
     <div class="banniere">
-        <img class="" src="" alt=""/>
+        <p>prestachope</p>
         <?php
         session_start();
 	        $page = "connexion";
