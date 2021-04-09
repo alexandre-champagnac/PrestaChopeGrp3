@@ -28,7 +28,7 @@
 	            <?php
 	        }
 	        elseif(isset($_SESSION['pseudo'])){ ?>
-	            <button onclick="document.location.href='index.php?page=deconnexion" class="button">se deconnecter</button>
+	            <button onclick="document.location.href='index.php?page=deconnexion'" class="button">se deconnecter</button>
                 <button onclick="document.location.href='index.php?page=compte'" class="button">Modifier Votre Compte</button>
 	            <?php
 	        }
