@@ -8,7 +8,7 @@
 <body>
 
 
-<form action="" method="post">
+<form action "" method="post">
     <div>
         <label for="pseudo">Identifiant :</label>
         <input type="text" id="pseudo" name="pseudo">
