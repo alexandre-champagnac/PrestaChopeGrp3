@@ -10,7 +10,7 @@ class ControleurConnexion
     {
         include_once("DAO/ClientDAO.php");
         $verif = ClientDAO::connexion($pseudo, $mdp);
-            if ($verif) {
+                if ($verif) {
                 $_SESSION['idClient'] = $verif->getIdClient();
                 $_SESSION['prenom'] = $verif->getPrenom();
                 $_SESSION['nom'] = $verif->getNom();
@@ -21,7 +21,8 @@ class ControleurConnexion
                 $_SESSION['isAdmin'] = $verif->getIsAdmin();
                 $_SESSION['adresse'] = $verif->getAdresse();
                 return true;
-            } else {
+            }
+            else {
                 return false;
             }
         }
