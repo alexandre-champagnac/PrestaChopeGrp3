@@ -48,9 +48,15 @@ class ClientDAO
         return null;
     }
     public function modifPassword($client){
+            $password = sha1($client->getPassword);
             $bdd = DatabaseLinker::getConnexion();
-            $reponse = $bdd->prepare('UPDATE client SET nom = ?,prenom = ?, pseudo = ?, password = ?, mail = ? adresse = ? WHERE idProduit = ?');
-            $reponse->execute(array($client->getNom,$client->getPrenom,$client->getPseudo,$client->getPassword,$client->getMail,$client->getAdresse,$client->getIdClient));
+            $reponse = $bdd->prepare('UPDATE client SET nom = ?,prenom = ?, pseudo = ?, password = ?, mail = ? adresse = ? WHERE idClient = ?');
+            $reponse->execute(array($client->getNom,$client->getPrenom,$client->getPseudo,$password,$client->getMail,$client->getAdresse,$client->getIdClient));
 
+    }
+    public function modiAvatar($idClient,$chemin){
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('UPDATE client SET avatar = ');
+        $reponse->execute(array($chemin, $idClient));
     }
 }
