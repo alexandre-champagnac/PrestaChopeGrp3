@@ -9,8 +9,8 @@ class SuperControleur
         {
             case "connexion" :
                 include_once("pages/connexion/ControleurConnexion.php");
-                $instanciation= new ControleurConnexion();
-                $instanciation->includeView();
+                $instance = new ControleurConnexion();
+                $instance->includeView();
 
             case"filtres":
                 include_once("pages/filtres/ControleurFiltres.php");
