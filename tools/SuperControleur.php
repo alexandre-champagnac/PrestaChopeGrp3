@@ -10,7 +10,16 @@ class SuperControleur
             case "connexion" :
                 include_once("pages/connexion/ControleurConnexion.php");
                 $instance = new ControleurConnexion();
+
+                if(!empty($_POST['pseudo']) && !empty($_POST['mdp']))
+                {
+                    if ($instance->authenticate($_POST['pseudo'], $_POST['mdp']))
+                    {
+                        $instance->redirectUser();
+                    }
+                }
                 $instance->includeView();
+                break;
 
             case"filtres":
                 include_once("pages/filtres/ControleurFiltres.php");

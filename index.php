@@ -9,45 +9,34 @@
     <div class="banniere">
         <img class="" src="" alt=""/>
         <?php
-        $page = "connexion";
-        include_once("tools/SuperControleur.php");
-        if (!empty($_GET['page'])) {
-            $page = $_GET['page'];
-        }
-        if((!isset($_SESSION['pseudo']) && $page!='connexion')){
-            ?>
-            <button href="" class="button">se connecter</button>
-            <button href="" class="button">s'inscrire</button>
-            <?php
-        }
-        elseif(isset($_SESSION['pseudo'])){ ?>
-            <button href="" class="button">se deconnecter</button>
-            <?php
-        }
+	        $page = "connexion";
+		    include_once("tools/SuperControleur.php");
+		    if(!empty($_GET['page']))
+		    {
+		        $page = $_GET['page'];
+		    }
+	        $page = "connexion";
+	        include_once("tools/SuperControleur.php");
+	        if (!empty($_GET['page'])) {
+	            $page = $_GET['page'];
+	        }
+	        if((!isset($_SESSION['pseudo']) && $page!='connexion')){
+	            ?>
+	            <button href="" class="button">se connecter</button>
+	            <button href="" class="button">s'inscrire</button>
+	            <?php
+	        }
+	        elseif(isset($_SESSION['pseudo'])){ ?>
+	            <button href="" class="button">se deconnecter</button>
+	            <?php
+	        }
         ?>
     </div>
-
-    <?php
-    $page = "connexion";
-    include_once("tools/SuperControleur.php");
-    if(!empty($_GET['page']))
-    {
-        $page = $_GET['page'];
-    }
-    SuperControleur::callPage($page);
-    ?>
 </header>
 <main>
     <?php
-        $page = "connexion";
-        include_once("tools/SuperControleur.php");
-        if (!empty($_GET['page'])) {
-            $page = $_GET['page'];
-        }
-
-
         SuperControleur::callPage($page);
-        ?>
+    ?>
 </main>
 <footer>
 
