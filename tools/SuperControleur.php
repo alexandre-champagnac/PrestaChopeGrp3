@@ -29,16 +29,16 @@ class SuperControleur
 
             case"compte":
                 include_once ("pages/infoCompte/ControleurInfoCompte.php");
-                $instance = new ControleurInfoCompte();
+                $instance1 = new ControleurInfoCompte();
 
-                if(!empty($_POST['pseudo']) || !empty($_POST['mdp']))
+                if(!empty($_POST['pseudo']) || !empty($_POST['mdp']) || !empty($_POST['nom']) || !empty($_POST['Prenom'] )|| !empty($_POST['adresse']) || !empty($_POST['mail']))
                 {
-                    if ($instance->authenticate($_POST['pseudo'], $_POST['mdp'],$_POST['nom'],$_POST['pseudo'],$_POST['pseudo'],$_POST['pseudo'],))
+                    if ($instance1->authenticate($_POST['pseudo'], $_POST['mdp'],$_POST['nom'],$_POST['Prenom'],$_POST['adresse'],$_POST['mail']))
                     {
-                        $instance->redirectUser();
+                        $instance1->redirectUser();
                     }
                 }
-                $instance->includeView();
+                $instance1->includeView();
                 break;
 
 
