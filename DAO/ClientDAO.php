@@ -1,9 +1,10 @@
 <?php
-
 include_once 'DTO/ClientDTO.php';
-
 class ClientDAO
 {
+    public function redirectUser(){
+        header('Location(index.php?page=accueil)');
+    }
     public function register($prenom, $nom, $pseudo, $password, $mail, $adresse)
     {
         $bdd = DatabaseLinker::getConnexion();
