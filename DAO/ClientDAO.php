@@ -16,7 +16,7 @@ class ClientDAO
 
     public static function connexion($pseudo, $password)
     {
-        $password = sha1($password)
+        $password = sha1($password);
         $bdd = DatabaseLinker::getConnexion();
         $reponse = $bdd->prepare('SELECT * from clients WHERE pseudo = ?');
         $reponse->execute(array($pseudo));
