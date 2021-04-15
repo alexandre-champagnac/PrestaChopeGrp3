@@ -1,7 +1,6 @@
 <?php
 class DeconnexionDAO{
-    public
-    function deconnexion(){
+    public static function deconnexion(){
         session_destroy();
     }
 }

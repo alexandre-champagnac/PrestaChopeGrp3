@@ -50,6 +50,11 @@ class SuperControleur
 
             case"listeProduit":
                 include_once ("pages/ListProduit/ControleurListeProduits.php");
+
+            case "deconnexion" :
+                include_once "DAO/DeconnexionDAO.php";
+                DeconnexionDAO::deconnexion();
+                header("Location: index.php?listeProduit");
         }
     }
 }
