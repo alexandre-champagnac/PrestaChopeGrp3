@@ -10,13 +10,15 @@ class SuperControleur
             case "connexion" :
                 include_once("pages/connexion/ControleurConnexion.php");
                 $instance = new ControleurConnexion();
-                $instance->includeView();
                 if(!empty($_POST['pseudo']) && !empty($_POST['mdp']))
                 {
                     if ($instance->authenticate($_POST['pseudo'], $_POST['mdp']))
                     {
                         $instance->redirectUser();
                     }
+                }
+                if (!isset($_SESSION['pseudo'])){
+                    $instance->includeView();
                 }
                 break;
             case"filtres":

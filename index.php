@@ -11,19 +11,13 @@
         <?php
         session_start();
 	        $page = "accueil";
-		    include_once("tools/SuperControleur.php");
-		    if(!empty($_GET['page']))
-		    {
-		        $page = $_GET['page'];
-		    }
-	        $page = "connexion";
 	        include_once("tools/SuperControleur.php");
 	        if (!empty($_GET['page'])) {
 	            $page = $_GET['page'];
 	        }
 	        if((!isset($_SESSION['pseudo']) && $page!='connexion')){
 	            ?>
-	            <button href="" class="button">se connecter</button>
+	            <button onclick="document.location.href='index.php?page=connexion'" class="button">se connecter</button>
 	            <button href="" class="button">s'inscrire</button>
 	            <?php
 	        }
