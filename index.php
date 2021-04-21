@@ -10,7 +10,7 @@
         <p>prestachope</p>
         <?php
         session_start();
-	        $page = "connexion";
+	        $page = "accueil";
 		    include_once("tools/SuperControleur.php");
 		    if(!empty($_GET['page']))
 		    {

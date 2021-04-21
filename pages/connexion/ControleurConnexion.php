@@ -29,6 +29,6 @@ class ControleurConnexion
 
     public function redirectUser()
     {
-        header("Location: index.php?page=listeProduit");
+        ClientDAO::redirectuser();
     }
 }
