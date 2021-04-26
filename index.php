@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>Prestachope</title>
 </head>
 <body>
@@ -15,18 +16,22 @@
 	        if (!empty($_GET['page'])) {
 	            $page = $_GET['page'];
 	        }
-	        if((!isset($_SESSION['pseudo']) && $page!='connexion')){
+	        if((!isset($_SESSION['pseudo']) && $page!='connexion' && $page != 'inscription')){
 	            ?>
 	            <button onclick="document.location.href='index.php?page=connexion'" class="button">se connecter</button>
-	            <button href="" class="button">s'inscrire</button>
+	            <button onclick="document.location.href='index.php?page=inscription'" class="button">s'inscrire</button>
 	            <?php
 	        }
-	        elseif(isset($_SESSION['pseudo'])){ ?>
+	        if(isset($_SESSION['pseudo'])){ ?>
 	            <button onclick="document.location.href='index.php?page=deconnexion'" class="button">se deconnecter</button>
-                <button onclick="document.location.href='index.php?page=compte'" class="button">Modifier Votre Compte</button>
+                <?php if($page != 'compte'){ ?>
+                    <button onclick="document.location.href='index.php?page=compte'" class="button">Modifier Votre Compte</button>
 	            <?php
+                }
 	        }
-        ?>
+	        if ($page != 'accueil'){ ?>
+                <button onclick="document.location.href='index.php?page=accueil'" class="button">accueil</button>
+            <?php } ?>
     </div>
 </header>
 <main>

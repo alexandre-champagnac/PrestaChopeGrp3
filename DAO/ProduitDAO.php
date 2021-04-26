@@ -1,10 +1,10 @@
 <?php
 
 include_once 'DTO/ProduitDTO.php';
-
+include_once 'tools/DatabaseLinker.php';
 class ProduitDAO
 {
-    public function allProduit(){
+    public static function allProduit(){
         $tab = array();
         $bdd = DatabaseLinker::getConnexion();
         $reponse = $bdd->prepare('SELECT * FROM produit');
@@ -13,7 +13,7 @@ class ProduitDAO
         if(isset($result[0]['nom'])){
             foreach($result as $value){
                 $produits = new ProduitDTO($value['idProduit'], $value['nom'], $value['datePeremption'], $value['quantite'],$value['prix'],$value['photo']);
-                $tab= $produits;
+                $tab[]= $produits;
             }
             return $tab;
         }

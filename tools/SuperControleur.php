@@ -62,6 +62,7 @@ class SuperControleur
             case"accueil" :
                 include_once ("pages/accueil/ControllerAccueil.php");
                 $instance2 = new ControllerAccueil();
+                $produits = $instance2->produit();
                 $instance2->includeview();
                 break;
             case "deconnexion" :
