@@ -3,9 +3,6 @@ include_once 'tools/DatabaseLinker.php';
 include_once 'DTO/ClientDTO.php';
 class ClientDAO
 {
-    public static function redirectUser(){
-        header('Location(index.php?page=accueil)');
-    }
     public function register($prenom, $nom, $pseudo, $password, $mail, $adresse)
     {
         $password = sha1($password);

@@ -29,6 +29,6 @@ class ControleurConnexion
 
     public function redirectUser()
     {
-        ClientDAO::redirectuser();
+        header("Location:index.php?page=accueil");
     }
 }
