@@ -19,6 +19,8 @@
     <i class='bx bx-chevron-up scrolltop__icon'></i>
 </a>
 
+<!--- Php --->
+
 <!--========== Le header ==========-->
 <header class="l-header" id="header">
 
@@ -33,6 +35,9 @@
                 <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
                 <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
                 <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion</a></li>
+                <li class="nav__item"><a href="index.php?page=deconnexion" class="nav__link">Deconnexion</a></li>
+
 
                 <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
             </ul>
