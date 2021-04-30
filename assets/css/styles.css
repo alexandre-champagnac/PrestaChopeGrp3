@@ -561,29 +561,3 @@ img{
         height: 640px;
     }
 }
-/* Mes tests (Loris) */
-.produit{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  background-color: rgba(71, 88, 43, 0.46);
-  width:10%;
-  height: 15%;
-}
-.listProduits{
-  display: flex;
-  justify-content: space-around;
-}
-.photo{
-  height: 300px;
-  width: auto;
-}
-.banniere{
-  background: rgba(173,86,86,0.59);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-}
-/*-------------------------*/
