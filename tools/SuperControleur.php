@@ -10,7 +10,7 @@ class SuperControleur
             case "connexion" :
                 include_once("pages/connexion/ControleurConnexion.php");
                 $instance = new ControleurConnexion();
-                if (!isset($_SESSION['pseudo'])){
+                if (!isset($_SESSION['idClient'])){
                     $instance->includeView();
                 }
                 if(!empty($_POST['pseudo']) && !empty($_POST['mdp']))
@@ -32,18 +32,11 @@ class SuperControleur
             case"compte":
                 include_once ("pages/infoCompte/ControleurInfoCompte.php");
                 $instance1 = new ControleurInfoCompte();
-                if (isset($_SESSION['pseudo'])){
+                if (!empty($_SESSION['idClient'])){
                     $instance1->includeView();
                 }
                 else{
-                    echo "Connectez-Vous !";
-                }
-                if(!empty($_POST['pseudo']) || !empty($_POST['mdp']) || !empty($_POST['nom']) || !empty($_POST['Prenom'] )|| !empty($_POST['adresse']) || !empty($_POST['mail']))
-                {
-                    if ($instance1->authenticate($_POST['pseudo'], $_POST['mdp'],$_POST['nom'],$_POST['Prenom'],$_POST['adresse'],$_POST['mail']))
-                    {
-                        $instance1->redirectUser();
-                    }
+                    header("Location: index.php");
                 }
                 break;
 

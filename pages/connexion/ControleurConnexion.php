@@ -10,18 +10,11 @@ class ControleurConnexion
     {
         include_once("DAO/ClientDAO.php");
         $verif = ClientDAO::connexion($pseudo, $mdp);
-                if ($verif) {
+                if ($verif != null) {
                 $_SESSION['idClient'] = $verif->getIdClient();
-                $_SESSION['prenom'] = $verif->getPrenom();
-                $_SESSION['nom'] = $verif->getNom();
-                $_SESSION['pseudo'] = $verif->getPseudo();
-                $_SESSION['mdp'] = $verif->getPassword();
-                $_SESSION['mail'] = $verif->getMail();
-                $_SESSION['avatar'] = $verif->getAvatar();
-                $_SESSION['cagnotte'] = $verif->getCagnotte();
                 $_SESSION['isAdmin'] = $verif->getIsAdmin();
-                $_SESSION['adresse'] = $verif->getAdresse();
-                return $verif;
+
+                return true;
             }
             else {
                 return false;

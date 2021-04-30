@@ -20,30 +20,35 @@ class ClientDAO
         $result = $reponse->fetch();
         if (isset($result['pseudo'])) {
             if ($result['password'] == $password) {
-                $client = new ClientDTO($result['idClient'], $result['prenom'], $result['nom'], $result['pseudo'], $result['password'], $result['mail'], $result['adresse'], $result['avatar'], $result['cagnotte'], $result['isAdmin']);
+                $client = new ClientDTO();
+                $client->setIdClient($result['idClient']);
+                $client->setIsAdmin($result['isAdmin']);
                 return $client;
             } else {
                 return null;
             }
         }
     }
-    public static function getInfos($pseudo, $password)
+    public static function getInfos($id)
     {
         $bdd = DatabaseLinker::getConnexion();
-        $reponse = $bdd->prepare('SELECT * from clients WHERE pseudo = ?');
-        $reponse->execute(array($pseudo));
+        $reponse = $bdd->prepare('SELECT * from clients WHERE idClient = ?');
+        $reponse->execute(array($id));
         $result = $reponse->fetch();
-        if (isset($result['pseudo'])) {
-            if ($result['password'] == $password) {
-                $client = new ClientDTO($result['idClient'], $result['prenom'], $result['nom'], $result['pseudo'], $result['password'], $result['mail'], $result['adresse'], $result['avatar'], $result['cagnotte'], $result['isAdmin']);
-                return $client;
-            } else {
-                return null;
-            }
-        }
+        $client = new ClientDTO();
+        $client->setIdClient($result['idClient']);
+        $client->setIsAdmin($result['isAdmin']);
+        $client->setPseudo($result['pseudo']);
+        $client->setPrenom($result['prenom']);
+        $client->setNom($result['nom']);
+        $client->setMail($result['mail']);
+        $client->setAdresse($result['adresse']);
+        $client->setCagnotte($result['cagnotte']);
+        $client->setAvatar($result['avatar']);
+        return $client;
     }
 
-    public function searchClientByNom($recherche)
+    public function searchClientByPseudo($recherche)
     {
         $recherche = '%' . $recherche . '%';
         $tab = array();
@@ -53,8 +58,17 @@ class ClientDAO
         $result = $reponse->fetchAll();
         if (isset($result[0]['nom'])) {
             foreach ($result as $value) {
-                $client = new ClientDTO($value['idClient'], $value['nom'], $value['prenom'], $value['pseudo'], $value['password'], $value['mail'], $value['adresse'], $value['avatar'], $value['cagnotte'], $value['isAdmin']);
-                $tab = $client;
+                $client = new ClientDTO();
+                $client->setIdClient($result['idClient']);
+                $client->setIsAdmin($result['isAdmin']);
+                $client->setPseudo($result['pseudo']);
+                $client->setPrenom($result['prenom']);
+                $client->setNom($result['nom']);
+                $client->setMail($result['mail']);
+                $client->setAdresse($result['adresse']);
+                $client->setCagnotte($result['cagnotte']);
+                $client->setAvatar($result['avatar']);
+                $tab[] = $client;
             }
             return $tab;
         }
@@ -67,9 +81,9 @@ class ClientDAO
             $reponse->execute(array($client->getNom,$client->getPrenom,$client->getPseudo,$password,$client->getMail,$client->getAdresse,$client->getIdClient));
 
     }
-    public function modiAvatar($idClient,$chemin){
+    public function modifAvatar($idClient,$chemin){
         $bdd = DatabaseLinker::getConnexion();
-        $reponse = $bdd->prepare('UPDATE client SET avatar = ');
+        $reponse = $bdd->prepare('UPDATE client SET avatar = ? where idClient = ?');
         $reponse->execute(array($chemin, $idClient));
     }
 }

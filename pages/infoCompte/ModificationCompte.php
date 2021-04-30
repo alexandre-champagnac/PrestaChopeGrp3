@@ -9,15 +9,12 @@
 <?php
 include_once 'DAO/ClientDAO.php';
 include_once 'DTO/ClientDTO.php';
-$client = ClientDAO::getInfos($_SESSION['pseudo'],$_SESSION['mdp']);
+$client = ClientDAO::getInfos($_SESSION['idClient']);
 ?>
-<form action="index.php?page=compte" method="post">
+<form action="index.php?page=compte&id=<?php echo $_SESSION['idClient']; ?>" method="post">
     <div>
         <label for="pseudo">Modifier votre pseudo:</label>
         <input type="text" id="pseudo" name="pseudo" value="<?php echo $client->getPseudo(); ?>"/>
-
-        <label for="password">Modifier votre Mots de Passe:</label>
-        <input type="password" id="mdp" name="mdp" value="<?php echo $client->getPassword(); ?>"/>
 
         <label for="nom">Modifier votre Nom</label>
         <input type="text" id="nom" name="nom" value="<?php echo $client->getNom(); ?>"/>

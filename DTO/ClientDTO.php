@@ -15,33 +15,6 @@ class ClientDTO
     private $isAdmin;
 
     /**
-     * ClientDTO constructor.
-     * @param $idClient
-     * @param $nom
-     * @param $prenom
-     * @param $pseudo
-     * @param $password
-     * @param $mail
-     * @param $adresse
-     * @param $avatar
-     * @param $cagnotte
-     * @param $isAdmin
-     */
-    public function __construct($idClient, $nom, $prenom, $pseudo, $password, $mail, $adresse, $avatar, $cagnotte, $isAdmin)
-    {
-        $this->idClient = $idClient;
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->pseudo = $pseudo;
-        $this->password = $password;
-        $this->mail = $mail;
-        $this->adresse = $adresse;
-        $this->avatar = $avatar;
-        $this->cagnotte = $cagnotte;
-        $this->isAdmin = $isAdmin;
-    }
-
-    /**
      * @return mixed
      */
     public function getIdClient()

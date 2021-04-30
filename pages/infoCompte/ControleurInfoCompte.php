@@ -9,11 +9,7 @@ class ControleurInfoCompte{
     {
         include_once("DAO/ClientDAO.php");
         include_once("DTO/ClientDTO.php");
-
-
-
         $client = new ClientDTO($_POST['pseudo']);
-
         ClientDAO::modifInfo($client);
     }
 

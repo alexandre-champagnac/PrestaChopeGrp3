@@ -47,16 +47,16 @@
                     <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 <?php
-                if(isset($_SESSION['pseudo'])){ ?>
+                if(isset($_SESSION['idClient']) && $page != 'compte'){ ?>
                     <li class="nav__item"><a href="index.php?page=compte" class="nav__link">Modifier Profil</a></li>
                 <?php }
-                if(!isset($_SESSION['pseudo']) && $page != 'inscription'){ ?>
+                if(!isset($_SESSION['idClient']) && $page != 'inscription'){ ?>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion</a></li>
                 <?php }
-                if(isset($_SESSION['pseudo'])){ ?>
+                if(isset($_SESSION['idClient'])){ ?>
                     <li class="nav__item"><a href="index.php?page=deconnexion" class="nav__link">Deconnexion</a></li>
                 <?php }
-                if($page != "inscription" && !isset($_SESSION['pseudo'])){ ?>
+                if($page != "inscription" && !isset($_SESSION['idClient'])){ ?>
                     <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
                 <?php }} ?>
 
