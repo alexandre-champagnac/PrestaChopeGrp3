@@ -38,20 +38,26 @@
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.php?page=accueil" class="nav__link active-link">Accueil</a></li>
-                <li class="nav__item"><a href="#about" class="nav__link">A propos</a></li>
-                <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-                <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
-                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 <?php
-                if($page != 'connexion' && !isset($_SESSION['pseudo']) && $page != 'inscription'){ ?>
+                if($page!= 'connexion' && $page != 'inscription') {
+                ?>
+                    <li class="nav__item"><a href="#about" class="nav__link">A propos</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                <?php
+                if(isset($_SESSION['pseudo'])){ ?>
+                    <li class="nav__item"><a href="index.php?page=compte" class="nav__link">Modifier Profil</a></li>
+                <?php }
+                if(!isset($_SESSION['pseudo']) && $page != 'inscription'){ ?>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion</a></li>
                 <?php }
                 if(isset($_SESSION['pseudo'])){ ?>
                     <li class="nav__item"><a href="index.php?page=deconnexion" class="nav__link">Deconnexion</a></li>
                 <?php }
-                if($page != 'connexion' && $page != "inscription" && !isset($_SESSION['pseudo'])){ ?>
+                if($page != "inscription" && !isset($_SESSION['pseudo'])){ ?>
                     <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
-                <?php } ?>
+                <?php }} ?>
 
 
                 <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
