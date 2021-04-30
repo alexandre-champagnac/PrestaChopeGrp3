@@ -1,46 +1,123 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== Le site des icons ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--========== Le css ==========-->
     <link rel="stylesheet" href="assets/css/styles.css">
+
     <title>Prestachope</title>
 </head>
 <body>
-<header>
-    <div class="banniere">
-        <p>prestachope</p>
-        <?php
-        session_start();
-	        $page = "accueil";
-	        include_once("tools/SuperControleur.php");
-	        if (!empty($_GET['page'])) {
-	            $page = $_GET['page'];
-	        }
-	        if((!isset($_SESSION['pseudo']) && $page!='connexion' && $page != 'inscription')){
-	            ?>
-	            <button onclick="document.location.href='index.php?page=connexion'" class="button">se connecter</button>
-	            <button onclick="document.location.href='index.php?page=inscription'" class="button">s'inscrire</button>
-	            <?php
-	        }
-	        if(isset($_SESSION['pseudo'])){ ?>
-	            <button onclick="document.location.href='index.php?page=deconnexion'" class="button">se deconnecter</button>
-                <?php if($page != 'compte'){ ?>
-                    <button onclick="document.location.href='index.php?page=compte'" class="button">Modifier Votre Compte</button>
-	            <?php
-                }
-	        }
-	        if ($page != 'accueil'){ ?>
-                <button onclick="document.location.href='index.php?page=accueil'" class="button">accueil</button>
-            <?php } ?>
-    </div>
-</header>
-<main>
-    <?php
-        SuperControleur::callPage($page);
-    ?>
-</main>
-<footer>
 
+<!--========== La barre du scroll ==========-->
+<a href="#" class="scrolltop" id="scroll-top">
+    <i class='bx bx-chevron-up scrolltop__icon'></i>
+</a>
+
+<!--- Php --->
+<?php
+    session_start();
+    $page = "accueil";
+    include_once("tools/SuperControleur.php");
+    if (!empty($_GET['page'])) {
+        $page = $_GET['page'];
+    }
+?>
+<!--========== Le header ==========-->
+<header class="l-header" id="header">
+
+
+    <nav class="nav bd-container">
+        <a href="#" class="nav__logo">PrestaChope3</a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.php?page=accueil" class="nav__link active-link">Accueil</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">A propos</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                <?php
+                if($page != 'connexion' && !isset($_SESSION['pseudo']) && $page != 'inscription'){ ?>
+                    <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion</a></li>
+                <?php }
+                if(isset($_SESSION['pseudo'])){ ?>
+                    <li class="nav__item"><a href="index.php?page=deconnexion" class="nav__link">Deconnexion</a></li>
+                <?php }
+                if($page != 'connexion' && $page != "inscription" && !isset($_SESSION['pseudo'])){ ?>
+                    <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
+                <?php } ?>
+
+
+                <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+</header>
+
+<?php
+    SuperControleur::callPage($page);
+?>
+
+<!--==========  ==========-->
+<footer class="footer section bd-container">
+    <div class="footer__container bd-grid">
+        <div class="footer__content">
+            <a href="#" class="footer__logo">PrestaChope</a>
+            <span class="footer__description">Restaurant</span>
+            <div>
+                <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Services</h3>
+            <ul>
+                <li><a href="#" class="footer__link">Livraison</a></li>
+                <li><a href="#" class="footer__link">Prix</a></li>
+                <li><a href="#" class="footer__link">Repas rapide</a></li>
+                <li><a href="#" class="footer__link">Reserve une table</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Information</h3>
+            <ul>
+                <li><a href="#" class="footer__link">Evenements</a></li>
+                <li><a href="#" class="footer__link">Nous contactez</a></li>
+                <li><a href="#" class="footer__link">Terms of services</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__content">
+            <h3 class="footer__title">Adresse</h3>
+            <ul>
+                <li>Nantes - France</li>
+                <li>PrestaChopeStaf</li>
+                <li>06 00 00 00 00</li>
+                <li>prestachoped@gmail..com</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="footer__copy">&#169; 2021 Prestachoppe</p>
 </footer>
+
+<!--========== Le reveal du scroll ==========-->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!--========== Import javascript ==========-->
+<script src="assets/js/main.js"></script>
 </body>
 </html>
