@@ -1,6 +1,5 @@
 <?php
 
-include_once ('DTO/ClientDTO.php');
 class ControleurInfoCompte{
     public function includeView()
     {
@@ -9,7 +8,19 @@ class ControleurInfoCompte{
     public function authenticate($pseudo, $mdp)
     {
         include_once("DAO/ClientDAO.php");
-        $f=ClientDAO::modifPassword($_SESSION['pseudo']);
+        include_once("DTO/ClientDTO.php");
+
+
+        $f=ClientDAO::modifInfo($_SESSION['pseudo']);
+
+
+        ClientDTO::setNom($_POST['nom']);
+        ClientDTO::getPseudo();
+        ClientDTO::getPrenom();
+        ClientDTO::getPassword();
+        ClientDTO::getAdresse();
+        ClientDTO::getMail();
+
 
 
     }
