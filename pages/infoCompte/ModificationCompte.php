@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
+
 <form action="index.php?page=compte" method="post">
     <div>
         <label for="pseudo">Modifier votre pseudo:</label>
-        <input type="text" id="pseudo" name="pseudo">
+        <input type="text" id="pseudo" name="pseudo" value="<?php ClientDTO::getPseudo(); ?>">
 
         <label for="password">Modifier votre Mots de Passe:</label>
         <input type="password" id="mdp" name="mdp">
