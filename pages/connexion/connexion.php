@@ -37,7 +37,7 @@
                         <input type="password" class="input" name="mdp">
                     </div>
                 </div>
-                <a href="#">Mot de passe oublié ?</a>
+                <a href="index?page=inscription">Pas encore inscrit ?</a>
                 <input type="submit" class="btn" value="OK">
             </form>
         </div>
