@@ -75,50 +75,52 @@
 ?>
 
 <!--==========  ==========-->
-<footer class="footer section bd-container">
-    <div class="footer__container bd-grid">
-        <div class="footer__content">
-            <a href="#" class="footer__logo">PrestaChope</a>
-            <span class="footer__description">Restaurant</span>
-            <div>
-                <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
-                <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
-                <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+<?php if($page != 'inscription'){ ?>
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">PrestaChope</a>
+                <span class="footer__description">Restaurant</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Livraison</a></li>
+                    <li><a href="#" class="footer__link">Prix</a></li>
+                    <li><a href="#" class="footer__link">Repas rapide</a></li>
+                    <li><a href="#" class="footer__link">Reserve une table</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Evenements</a></li>
+                    <li><a href="#" class="footer__link">Nous contactez</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Adresse</h3>
+                <ul>
+                    <li>Nantes - France</li>
+                    <li>PrestaChopeStaf</li>
+                    <li>06 00 00 00 00</li>
+                    <li>prestachoped@gmail..com</li>
+                </ul>
             </div>
         </div>
 
-        <div class="footer__content">
-            <h3 class="footer__title">Services</h3>
-            <ul>
-                <li><a href="#" class="footer__link">Livraison</a></li>
-                <li><a href="#" class="footer__link">Prix</a></li>
-                <li><a href="#" class="footer__link">Repas rapide</a></li>
-                <li><a href="#" class="footer__link">Reserve une table</a></li>
-            </ul>
-        </div>
-
-        <div class="footer__content">
-            <h3 class="footer__title">Information</h3>
-            <ul>
-                <li><a href="#" class="footer__link">Evenements</a></li>
-                <li><a href="#" class="footer__link">Nous contactez</a></li>
-                <li><a href="#" class="footer__link">Terms of services</a></li>
-            </ul>
-        </div>
-
-        <div class="footer__content">
-            <h3 class="footer__title">Adresse</h3>
-            <ul>
-                <li>Nantes - France</li>
-                <li>PrestaChopeStaf</li>
-                <li>06 00 00 00 00</li>
-                <li>prestachoped@gmail..com</li>
-            </ul>
-        </div>
-    </div>
-
-    <p class="footer__copy">&#169; 2021 Prestachoppe</p>
+        <p class="footer__copy">&#169; 2021 Prestachoppe</p>
 </footer>
+<?php } ?>
 
 <!--========== Le reveal du scroll ==========-->
 <script src="https://unpkg.com/scrollreveal"></script>
