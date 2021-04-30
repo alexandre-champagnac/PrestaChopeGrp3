@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale 1">
     <title>Connexion</title>
-    <link rel="stylesheet" href="../../assets/css/style_login.css">
+    <link rel="stylesheet" href="assets/css/style_login.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
-    <img class="wave" src="../../assets/img/wave.png" alt="">
+    <img class="wave" src="assets/img/wave.png" alt="">
     <div class="container">
         <div class="img">
             <img src="../../assets/img/drink.svg" alt="">
