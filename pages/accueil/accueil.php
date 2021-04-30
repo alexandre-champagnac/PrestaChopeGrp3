@@ -57,31 +57,19 @@
         <span class="section-subtitle">Special</span>
         <h2 class="section-title">Menu de la semaine</h2>
 
-        <div class="menu__container bd-grid">
-            <div class="menu__content">
-                <img src="assets/img/plate1.png" alt="" class="menu__img">
-                <h3 class="menu__name">Salade 1</h3>
-                <span class="menu__detail">Desc</span>
-                <span class="menu__preci">$22.00</span>
-                <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
-            </div>
-
-            <div class="menu__content">
-                <img src="assets/img/plate2.png" alt="" class="menu__img">
-                <h3 class="menu__name">Salade 2</h3>
-                <span class="menu__detail">Desc</span>
-                <span class="menu__preci">$12.00</span>
-                <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
-            </div>
-
-            <div class="menu__content">
-                <img src="assets/img/plate3.png" alt="" class="menu__img">
-                <h3 class="menu__name">Salade 3</h3>
-                <span class="menu__detail">Desc</span>
-                <span class="menu__preci">$9.50</span>
-                <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
-            </div>
-        </div>
+        <?php $produits = ControllerAccueil::produit();
+        foreach ($produits as $value){
+            if($value->getQuantité() > 0){ ?>
+                <div class="menu__container bd-grid">
+                    <div class="menu__content">
+                        <img src="<?php $value->getPhoto() ?>" alt="" class="menu__img">
+                        <h3 class="menu__name"></h3>
+                        <span class="menu__detail">Desc</span>
+                        <span class="menu__preci">$22.00</span>
+                        <a href="#" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+                </div>
+        <?php }} ?>
     </section>
 
     <!--===== Section application =======-->
