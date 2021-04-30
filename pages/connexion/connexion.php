@@ -13,11 +13,11 @@
     <img class="wave" src="assets/img/wave.png" alt="">
     <div class="container">
         <div class="img">
-            <img src="../../assets/img/drink.svg" alt="">
+            <img src="assets/img/drink.svg" alt="">
         </div>
         <div class="loginform-container">
             <form action="index.php?page=connexion" method="post">
-                <img src="../../assets/img/logo_Prestachoppe.png" alt="" class="avatar">
+                <img src="assets/img/logo_Prestachoppe.png" alt="" class="avatar">
                 <h2>Bienvenue !</h2>
                 <div class="input-div one">
                     <div class="i">
@@ -42,6 +42,6 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="../../assets/js/login.js"></script>
+    <script type="text/javascript" src="assets/js/login.js"></script>
 </body>
 </html>
