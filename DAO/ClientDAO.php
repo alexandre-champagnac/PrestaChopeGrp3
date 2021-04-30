@@ -60,7 +60,7 @@ class ClientDAO
         }
         return null;
     }
-    public function modifPassword($client){
+    public function modifInfo($client){
             $password = sha1($client->getPassword);
             $bdd = DatabaseLinker::getConnexion();
             $reponse = $bdd->prepare('UPDATE client SET nom = ?,prenom = ?, pseudo = ?, password = ?, mail = ? adresse = ? WHERE idClient = ?');
