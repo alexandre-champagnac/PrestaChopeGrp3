@@ -40,38 +40,38 @@
             </div>
             <div class="input-div three">
                 <div class="i">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-address-card"></i>
                 </div>
                 <div>
-                    <h5>Mot de passe</h5>
-                    <input type="password" class="input" name="mdp">
+                    <h5>Prenom</h5>
+                    <input type="password" class="input" name="firstname">
                 </div>
             </div>
             <div class="input-div four">
                 <div class="i">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-address-card"></i>
                 </div>
                 <div>
-                    <h5>Mot de passe</h5>
-                    <input type="password" class="input" name="mdp">
+                    <h5>Nom</h5>
+                    <input type="password" class="input" name="name">
                 </div>
             </div>
             <div class="input-div five">
                 <div class="i">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-map-marked-alt"></i>
                 </div>
                 <div>
-                    <h5>Mot de passe</h5>
-                    <input type="password" class="input" name="mdp">
+                    <h5>Adresse</h5>
+                    <input type="text" class="input" name="adress">
                 </div>
             </div>
             <div class="input-div five">
                 <div class="i">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-envelope"></i>
                 </div>
                 <div>
-                    <h5>Mot de passe</h5>
-                    <input type="password" class="input" name="mdp">
+                    <h5>Mail</h5>
+                    <input type="password" class="input" name="mail">
                 </div>
             </div>
             <a href="#">Mot de passe oublié ?</a>

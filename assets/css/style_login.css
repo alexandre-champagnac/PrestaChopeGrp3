@@ -48,7 +48,10 @@ form{
 }
 
 .avatar{
-    width: 150px;
+    width: 300px;
+    position: relative;
+    top: 30px;
+
 }
 
 form h2{
