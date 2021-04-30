@@ -11,18 +11,10 @@ class ControleurInfoCompte{
         include_once("DTO/ClientDTO.php");
 
 
-        $f=ClientDAO::modifInfo($_SESSION['pseudo']);
 
+        $client = new ClientDTO($_POST['pseudo']);
 
-        ClientDTO::setNom($_POST['nom']);
-        ClientDTO::getPseudo();
-        ClientDTO::getPrenom();
-        ClientDTO::getPassword();
-        ClientDTO::getAdresse();
-        ClientDTO::getMail();
-
-
-
+        ClientDAO::modifInfo($client);
     }
 
     public function redirectUser()
