@@ -20,7 +20,7 @@ class ControleurConnexion
                 $_SESSION['cagnotte'] = $verif->getCagnotte();
                 $_SESSION['isAdmin'] = $verif->getIsAdmin();
                 $_SESSION['adresse'] = $verif->getAdresse();
-                return true;
+                return $verif;
             }
             else {
                 return false;

@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
-
+<?php
+ $client = ClientDAO::connexion($_SESSION['pseudo'],$_SESSION['password']);
+?>
 <form action="index.php?page=compte" method="post">
     <div>
         <label for="pseudo">Modifier votre pseudo:</label>
-        <input type="text" id="pseudo" name="pseudo" value="<?php echo(clientDTO::getPseudo());?>"/>
+        <input type="text" id="pseudo" name="pseudo" value="<?php echo $client->getPseudo(); ?>"/>
 
         <label for="password">Modifier votre Mots de Passe:</label>
         <input type="password" id="mdp" name="mdp">
