@@ -70,6 +70,11 @@ class SuperControleur
                 DeconnexionDAO::deconnexion();
                 header("Location: index.php?page=accueil");
                 break;
+            case "inscription" :
+                include_once "pages/inscription/ControlleurInscription.php";
+                $instance3 = new ControlleurInscription();
+                $instance3->includeView();
+
         }
     }
 }
