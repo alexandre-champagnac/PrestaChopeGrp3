@@ -27,6 +27,21 @@ class ClientDAO
             }
         }
     }
+    public static function getInfos($pseudo, $password)
+    {
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('SELECT * from clients WHERE pseudo = ?');
+        $reponse->execute(array($pseudo));
+        $result = $reponse->fetch();
+        if (isset($result['pseudo'])) {
+            if ($result['password'] == $password) {
+                $client = new ClientDTO($result['idClient'], $result['prenom'], $result['nom'], $result['pseudo'], $result['password'], $result['mail'], $result['adresse'], $result['avatar'], $result['cagnotte'], $result['isAdmin']);
+                return $client;
+            } else {
+                return null;
+            }
+        }
+    }
 
     public function searchClientByNom($recherche)
     {

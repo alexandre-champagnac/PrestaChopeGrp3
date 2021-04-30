@@ -15,6 +15,7 @@ class ControleurConnexion
                 $_SESSION['prenom'] = $verif->getPrenom();
                 $_SESSION['nom'] = $verif->getNom();
                 $_SESSION['pseudo'] = $verif->getPseudo();
+                $_SESSION['mdp'] = $verif->getPassword();
                 $_SESSION['mail'] = $verif->getMail();
                 $_SESSION['avatar'] = $verif->getAvatar();
                 $_SESSION['cagnotte'] = $verif->getCagnotte();

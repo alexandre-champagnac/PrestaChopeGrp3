@@ -7,7 +7,8 @@
 </head>
 <body>
 <?php
- $client = ClientDAO::connexion($_SESSION['pseudo'],$_SESSION['password']);
+    include_once 'DAO/ClientDAO.php';
+    $client = ClientDAO::getInfos($_SESSION['pseudo'],$_SESSION['mdp']);
 ?>
 <form action="index.php?page=compte" method="post">
     <div>

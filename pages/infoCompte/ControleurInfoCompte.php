@@ -1,9 +1,7 @@
 <?php
 
-
-class ControleurInfoCompte
-include_once ('DTO/ClientDTO.php')
-{
+include_once ('DTO/ClientDTO.php');
+class ControleurInfoCompte{
     public function includeView()
     {
         include_once "pages/infoCompte/ModificationCompte.php";
