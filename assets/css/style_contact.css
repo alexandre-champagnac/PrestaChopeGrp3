@@ -1,0 +1,96 @@
+:root{
+    --font-color:#555;
+    --font-hover-color:orange;
+}
+
+.container{
+    width:500px;
+    box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+    padding:2em;
+    margin-top: 10%;
+    margin-left: 35%;
+
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.h3confirm{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.form-group{
+    margin-bottom:1.5em;
+    transition:all .3s;
+}
+.form-label{
+    font-size:.75em;
+    color:var(--font-color);
+    display:block;
+    opacity:0;
+    transition: all .3s;
+    transform:translateX(-50px);
+}
+.form-control{
+    box-shadow:none;
+    border-radius:0;
+    border-color:#ccc;
+    border-style:none none solid none;
+    width:100%;
+    font-size:1.25em;
+    transition:all .6s;
+}
+.form-control::placeholder{
+    color:#aaa;
+}
+.form-control:focus{
+    box-shadow:none;
+    border-color:var(--font-hover-color);
+    outline:none;
+}
+.form-group:focus-within{
+    transform:scale(1.1,1.1);
+}
+
+.form-control:invalid:focus{
+    border-color:red;
+}
+.form-control:valid:focus{
+    border-color:green;
+}
+
+.btn{
+
+}
+.btn:hover{
+    border-color:var(--font-hover-color);
+    color:var(--font-hover-color);
+}
+textarea{
+    resize:none;
+}
+
+
+
+.focused > .form-label{
+    opacity:1;
+    transform:translateX(0px);
+
+}
+
+
+.learn-more{
+    margin-left: 25%;
+    background-color: #069C54;
+    border-radius: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.form-invalid{
+    outline: 1px solid red !important;
+}

@@ -44,7 +44,7 @@
                 </div>
                 <div>
                     <h5>Prenom</h5>
-                    <input type="password" class="input" name="firstname">
+                    <input type="text" class="input" name="firstname">
                 </div>
             </div>
             <div class="input-div four">
@@ -53,7 +53,7 @@
                 </div>
                 <div>
                     <h5>Nom</h5>
-                    <input type="password" class="input" name="name">
+                    <input type="text" class="input" name="name">
                 </div>
             </div>
             <div class="input-div five">
@@ -71,7 +71,7 @@
                 </div>
                 <div>
                     <h5>Mail</h5>
-                    <input type="password" class="input" name="mail">
+                    <input type="text" class="input" name="mail">
                 </div>
             </div>
             <a href="#">Mot de passe oublié ?</a>

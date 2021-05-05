@@ -5,7 +5,7 @@
             <div class="home__data">
                 <h1 class="home__title">Prestachope</h1>
                 <h2 class="home__subtitle">Le bar de votre <br> commune</h2>
-                <a href="#" class="button">Voir le menu</a>
+                <a href="#menu" class="button">Voir le menu</a>
             </div>
 
             <img src="assets/img/logo_Prestachoppe.png" alt="" class="home__img">

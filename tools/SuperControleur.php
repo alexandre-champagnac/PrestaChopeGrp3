@@ -41,13 +41,6 @@ class SuperControleur
                 break;
 
 
-            case"contact":
-                include_once ("pages/formulaireContacte/ControleurFormulaireContacte.php");
-                break;
-
-            case"commantaire":
-                include_once ("pages/commentaires/ControleurCommentaires.php");
-                break;
 
             case"listeProduit":
                 include_once ("pages/ListProduit/ControleurListeProduits.php");
@@ -66,6 +59,12 @@ class SuperControleur
                 include_once "pages/inscription/ControlleurInscription.php";
                 $instance3 = new ControlleurInscription();
                 $instance3->includeView();
+                break;
+            case "contact" :
+                include_once ("pages/contactpage/ControlleurContact.php");
+                $instance2 = new ControlleurContact();
+                $instance2->includeview();
+                break;
 
         }
     }
