@@ -22,8 +22,8 @@ $produit = ProduitDAO::getProduitById($_GET['id']);
         <button class="ajoutpanier"><a href=""> ajouter au pannier </a></button>
     </div>
     <div>
-        <p>Information sur le produit :</p>
-        <p><?php //echo $produit->getDescription(); ?></p>
+        <p>Information sur le produit :</p><br>
+        <p><?php echo $produit->getDescription(); ?></p>
 
 
 </main>
