@@ -8,7 +8,6 @@ class ProduitDTO
     private $photo;
     private $description;
     private $nomProduit;
-    private $datePeremption;
     private $quantité;
 
     /**
@@ -22,7 +21,6 @@ class ProduitDTO
     {
         $this->idProduit = $idProduit;
         $this->nomProduit = $nomProduit;
-        $this->datePeremption = $datePeremption;
         $this->quantité = $quantité;
         $this->prix =$prix;
         $this->photo = $photo;

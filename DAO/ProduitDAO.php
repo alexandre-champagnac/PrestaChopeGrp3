@@ -12,7 +12,7 @@ class ProduitDAO
         $result = $reponse->fetchAll();
         if(isset($result[0]['nom'])){
             foreach($result as $value){
-                $produits = new ProduitDTO($value['idProduit'], $value['nom'], $value['datePeremption'], $value['quantite'],$value['prix'],$value['photo'],$value['description']);
+                $produits = new ProduitDTO($value['idProduit'], $value['nom'], $value['quantite'],$value['prix'],$value['photo'],$value['description']);
                 $tab[]= $produits;
             }
             return $tab;
@@ -29,7 +29,7 @@ class ProduitDAO
         $tab = array();
         if (isset($result[0]['nom'])) {
             foreach ($result as $value) {
-                $produit = new ProduitDTO($value['idProduit'], $value['nom'], $value['datePeremption'], $value['quantite'],$value['prix'],$value['photo'],$value['description']);
+                $produit = new ProduitDTO($value['idProduit'], $value['nom'], $value['quantite'],$value['prix'],$value['photo'],$value['description']);
                 $tab = $produit;
             }
             return $tab;
@@ -38,8 +38,8 @@ class ProduitDAO
     }
     public function  modifProduit($produit){
         $bdd = DatabaseLinker::getConnexion();
-        $reponse = $bdd->prepare('UPDATE produit SET prix = ?, nom = ?,photo = ?, datePeremption = ?, quantite = ? WHERE idProduit = ?');
-        $reponse->execute(array($produit->getPrix,$produit->getNom,$produit->getPhoto,$produit->getDateperemption,$produit->getQuantite,$produit->getIdProduit,$produit->getDescription));
+        $reponse = $bdd->prepare('UPDATE produit SET prix = ?, nom = ?,photo = ?, quantite = ? WHERE idProduit = ?');
+        $reponse->execute(array($produit->getPrix,$produit->getNom,$produit->getPhoto,$produit->getQuantite,$produit->getIdProduit,$produit->getDescription));
     }
     public function produitCategorie($idCategorie){
         $bdd = DatabaseLinker::getConnexion();
@@ -48,7 +48,7 @@ class ProduitDAO
         $result = $reponse->fetchAll;
         $tab = array();
         foreach ($result as $value) {
-            $produit = new ProduitDTO($value['idProduit'], $value['nom'], $value['datePeremption'], $value['quantite'],$value['prix'],$value['photo'],$value['description']);
+            $produit = new ProduitDTO($value['idProduit'], $value['nom'], $value['quantite'],$value['prix'],$value['photo'],$value['description']);
             $tab = $produit;
         }
         return $tab;
@@ -58,7 +58,7 @@ class ProduitDAO
         $reponse = $bdd->prepare('SELECT * FROM produit WHERE idProduit = ?');
         $reponse->execute(array($id));
         $result = $reponse->fetch();
-        $produit = new ProduitDTO($result['idProduit'], $result['nom'], $result['datePeremption'], $result['quantite'],$result['prix'],$result['photo'],$result['description']);
+        $produit = new ProduitDTO($result['idProduit'], $result['nom'], $result['quantite'],$result['prix'],$result['photo'],$result['description']);
         return $produit;
     }
 }
