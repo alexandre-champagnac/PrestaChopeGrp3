@@ -23,7 +23,7 @@ $produit = ProduitDAO::getProduitById($_GET['id']);
     </div>
     <div>
         <p>Information sur le produit :</p>
-        <p><?php echo /*$produit->getDescription();*/ ?></p>
+        <p><?php //echo $produit->getDescription(); ?></p>
 
 
 </main>
