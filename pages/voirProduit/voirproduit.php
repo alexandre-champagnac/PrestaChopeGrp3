@@ -1,22 +1,12 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale 1">
+    <title>Produit</title>
+    <link rel="stylesheet" href="assets/css/style_voirproduit.css">
+</head>
 <main class="l-main">
-    <!--========== Accueil ==========-->
-    <section class="menu section bd-container" id="menu">
-        <span class="section-subtitle">Special</span>
-        <h2 class="section-title">Menu de la semaine</h2>
-        <div class="menu__container bd-grid">
-            <?php $produits = ControllerVoirProduit::produit();
-            foreach ($produits as $value){
-                if($value->getQuantité() > 0){ ?>
-
-                    <div class="menu__content">
-                        <img src="<?php echo $value->getPhoto(); ?>" alt="" class="menu__img">
-                        <h3 class="menu__name"><?php echo $value->getNomProduit(); ?> </h3>
-                        <span class="menu__detail">Desc</span>
-                        <span class="menu__preci"> <?php echo $value->getPrix(); ?>€</span>
-                        <a href="index.php?page=voirProduit&id=<?php echo $value->getIdProduit() ; ?>" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
-                    </div>
-
-                <?php }} ?>
-        </div>
-    </section>
+            <h3>Bonjour ! cher client </h3>
 </main>
+

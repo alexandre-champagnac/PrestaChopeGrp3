@@ -73,7 +73,11 @@ class SuperControleur
                 include_once ("pages/panier/ControlleurPanier.php");
                 $instance5 = new ControlleurPanier();
                 $instance5->includeView();
-
+                break;
+            case "voirProduit" :
+                include_once ("pages/voirProduit/ControllerVoirProduit.php");
+                $instance = new ControllerVoirProduit();
+                $instance->includeview();
                 break;
 
         }
