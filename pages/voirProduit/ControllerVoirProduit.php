@@ -8,6 +8,6 @@ class ControllerVoirProduit{
     }
 
     public function getProduitById($id){
-        ProduitDAO::getProduitById($id);
+        $produit = ProduitDAO::getProduitById($id);
     }
 }

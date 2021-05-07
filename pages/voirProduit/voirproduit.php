@@ -6,7 +6,25 @@
     <title>Produit</title>
     <link rel="stylesheet" href="assets/css/style_voirproduit.css">
 </head>
-<main class="l-main">
-            <h3>Bonjour ! cher client </h3>
+<!--- Php --->
+<?php
+include_once "DAO/ProduitDAO.php";
+$produit = ProduitDAO::getProduitById($_GET['id']);
+?>
+<main class="page">
+    <h4 class="titreProduit"><?php echo $produit->getNomProduit(); ?></h4>
+    <img src="<?php echo $produit->getPhoto() ?>" alt=""/>
+    <div class="AlignPanier">
+        <div class="prix">
+            <p>Prix :</p>
+            <p class="ParaPrix"><?php echo $produit->getPrix(); ?></p>
+        </div>
+        <button class="ajoutpanier"><a href=""> ajouter au pannier </a></button>
+    </div>
+    <div>
+        <p>Information sur le produit :</p>
+        <p><?php echo /*$produit->getDescription();*/ ?></p>
+
+
 </main>
 

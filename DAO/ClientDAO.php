@@ -44,7 +44,6 @@ class ClientDAO
         $client->setMail($result['mail']);
         $client->setAdresse($result['adresse']);
         $client->setCagnotte($result['cagnotte']);
-        $client->setAvatar($result['avatar']);
         return $client;
     }
 
@@ -67,7 +66,6 @@ class ClientDAO
                 $client->setMail($result['mail']);
                 $client->setAdresse($result['adresse']);
                 $client->setCagnotte($result['cagnotte']);
-                $client->setAvatar($result['avatar']);
                 $tab[] = $client;
             }
             return $tab;
@@ -80,10 +78,5 @@ class ClientDAO
             $reponse = $bdd->prepare('UPDATE client SET nom = ?,prenom = ?, pseudo = ?, password = ?, mail = ? adresse = ? WHERE idClient = ?');
             $reponse->execute(array($client->getNom,$client->getPrenom,$client->getPseudo,$password,$client->getMail,$client->getAdresse,$client->getIdClient));
 
-    }
-    public function modifAvatar($idClient,$chemin){
-        $bdd = DatabaseLinker::getConnexion();
-        $reponse = $bdd->prepare('UPDATE client SET avatar = ? where idClient = ?');
-        $reponse->execute(array($chemin, $idClient));
     }
 }

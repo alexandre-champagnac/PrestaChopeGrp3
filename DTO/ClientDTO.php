@@ -10,7 +10,6 @@ class ClientDTO
     private $password;
     private $mail;
     private $adresse;
-    private $avatar;
     private $cagnotte;
     private $isAdmin;
 
@@ -125,23 +124,6 @@ class ClientDTO
     {
         $this->adresse = $adresse;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getAvatar()
-    {
-        return $this->avatar;
-    }
-
-    /**
-     * @param mixed $avatar
-     */
-    public function setAvatar($avatar)
-    {
-        $this->avatar = $avatar;
-    }
-
     /**
      * @return mixed
      */

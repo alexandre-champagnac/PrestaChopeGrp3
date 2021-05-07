@@ -1,3 +1,16 @@
-h3{
-    font-size: 50px;
+.page{
+    margin-top: 5rem;
+    margin-left: 10rem;
+}
+.prix{
+    display: flex;
+}
+.ParaPrix{
+    padding-left: 6px;
+}
+.AlignPanier{
+    display: flex;
+}
+.ajoutpanier{
+    margin-left: 2rem;
 }

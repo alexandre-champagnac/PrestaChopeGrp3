@@ -6,6 +6,7 @@ class ProduitDTO
     private $idProduit;
     private $prix;
     private $photo;
+    private $description;
     private $nomProduit;
     private $datePeremption;
     private $quantité;
@@ -17,7 +18,7 @@ class ProduitDTO
      * @param $datePeremption
      * @param $quantité
      */
-    public function __construct($idProduit, $nomProduit, $datePeremption, $quantité,$prix,$photo)
+    public function __construct($idProduit, $nomProduit, $datePeremption, $quantité,$prix,$photo,$description)
     {
         $this->idProduit = $idProduit;
         $this->nomProduit = $nomProduit;
@@ -25,6 +26,7 @@ class ProduitDTO
         $this->quantité = $quantité;
         $this->prix =$prix;
         $this->photo = $photo;
+        $this->description = $description;
     }
 
     /**
@@ -41,6 +43,22 @@ class ProduitDTO
     public function setPrix($prix): void
     {
         $this->prix = $prix;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description): void
+    {
+        $this->description = $description;
     }
 
     /**
