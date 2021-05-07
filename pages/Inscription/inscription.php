@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <h5>Pseudo</h5>
-                    <input type="text" class="input" name="pseudo">
+                    <input type="text" class="input" name="pseudo"  minlength="2"  required >
                 </div>
             </div>
             <div class="input-div two">
@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <h5>Mot de passe</h5>
-                    <input type="password" class="input" name="password">
+                    <input type="password" minlength="8" class="input" name="password"  required>
                 </div>
             </div>
             <div class="input-div three">
@@ -45,7 +45,7 @@
                 </div>
                 <div>
                     <h5>Prenom</h5>
-                    <input type="text" class="input" name="prenom">
+                    <input type="text" class="input" name="prenom" minlength="2" required>
                 </div>
             </div>
             <div class="input-div four">
@@ -54,7 +54,7 @@
                 </div>
                 <div>
                     <h5>Nom</h5>
-                    <input type="text" class="input" name="nom">
+                    <input type="text" class="input" name="nom" minlength="2" required>
                 </div>
             </div>
             <div class="input-div five">
@@ -63,7 +63,7 @@
                 </div>
                 <div>
                     <h5>Adresse</h5>
-                    <input type="text" class="input" name="adresse">
+                    <input type="text" class="input" name="adresse" minlength="2" required>
                 </div>
             </div>
             <div class="input-div five">
@@ -72,7 +72,7 @@
                 </div>
                 <div>
                     <h5>Mail</h5>
-                    <input type="text" class="input" name="mail">
+                    <input type="text" class="input" name="mail" minlength="2" required>
                 </div>
             </div>
             <a href="#">Mot de passe oublié ?</a>

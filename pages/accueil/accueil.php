@@ -64,7 +64,7 @@
                     <div class="menu__content">
                         <img src="<?php echo $value->getPhoto(); ?>" alt="" class="menu__img">
                         <h3 class="menu__name"><?php echo $value->getNomProduit(); ?> </h3>
-                        <span class="menu__detail">Desc</span>
+                        <span class="menu__detail"><?php echo $value->getDescriptionProduit();?></span>
                         <span class="menu__preci"> <?php echo $value->getPrix(); ?>€</span>
                         <a href="index.php?page=voirProduit&id=<?php echo $value->getIdProduit() ; ?>" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
                     </div>
