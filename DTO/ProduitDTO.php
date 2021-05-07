@@ -17,7 +17,7 @@ class ProduitDTO
      * @param $datePeremption
      * @param $quantité
      */
-    public function __construct($idProduit, $nomProduit, $datePeremption, $quantité,$prix,$photo,$description)
+    public function __construct($idProduit, $nomProduit, $quantité,$prix,$photo,$description)
     {
         $this->idProduit = $idProduit;
         $this->nomProduit = $nomProduit;
