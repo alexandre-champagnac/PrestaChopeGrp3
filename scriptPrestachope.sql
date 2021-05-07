@@ -19,8 +19,8 @@ CREATE TABLE Clients(
                         password Varchar (255) NOT NULL ,
                         mail     Varchar (100) NOT NULL ,
                         adresse  Varchar (50) NOT NULL ,
-                        cagnotte Float NOT NULL ,
-                        isAdmin  Int NOT NULL
+                        cagnotte Float NOT NULL DEFAULT 50,
+                        isAdmin  Int NOT NULL DEFAULT 0
     ,CONSTRAINT Clients_PK PRIMARY KEY (idClient)
 )ENGINE=InnoDB;
 
@@ -33,7 +33,6 @@ CREATE TABLE Produit(
                         idProduit      Int  Auto_increment  NOT NULL ,
                         nom            Varchar (50) NOT NULL ,
                         prix           Float NOT NULL ,
-                        datePeremption Date NOT NULL ,
                         quantite       Int NOT NULL ,
                         photo          Text NOT NULL ,
                         description    Text NOT NULL
