@@ -18,6 +18,7 @@
     </div>
     <div class="loginform-container">
         <form action="index.php?page=inscription" method="post">
+
             <img src="assets/img/logo_Prestachoppe.png" alt="" class="avatar">
             <h2>Rejoignez nous !</h2>
             <div class="input-div one">
@@ -35,7 +36,7 @@
                 </div>
                 <div>
                     <h5>Mot de passe</h5>
-                    <input type="password" class="input" name="mdp">
+                    <input type="password" class="input" name="password">
                 </div>
             </div>
             <div class="input-div three">
@@ -44,7 +45,7 @@
                 </div>
                 <div>
                     <h5>Prenom</h5>
-                    <input type="text" class="input" name="firstname">
+                    <input type="text" class="input" name="prenom">
                 </div>
             </div>
             <div class="input-div four">
@@ -53,7 +54,7 @@
                 </div>
                 <div>
                     <h5>Nom</h5>
-                    <input type="text" class="input" name="name">
+                    <input type="text" class="input" name="nom">
                 </div>
             </div>
             <div class="input-div five">
@@ -62,7 +63,7 @@
                 </div>
                 <div>
                     <h5>Adresse</h5>
-                    <input type="text" class="input" name="adress">
+                    <input type="text" class="input" name="adresse">
                 </div>
             </div>
             <div class="input-div five">

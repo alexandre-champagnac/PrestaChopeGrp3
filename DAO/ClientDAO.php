@@ -3,7 +3,7 @@ include_once 'tools/DatabaseLinker.php';
 include_once 'DTO/ClientDTO.php';
 class ClientDAO
 {
-    public function register($prenom, $nom, $pseudo, $password, $mail, $adresse)
+    public static function register($prenom, $nom, $pseudo, $password, $mail, $adresse)
     {
         $password = sha1($password);
         $bdd = DatabaseLinker::getConnexion();

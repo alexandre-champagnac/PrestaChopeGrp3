@@ -43,10 +43,9 @@
                 if($page!= 'connexion' && $page != 'inscription') {
                     if($page == 'accueil'){
                 ?>
-                        <li class="nav__item"><a href="#about" class="nav__link">A propos</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
                         <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="index.php?page=contact" class="nav__link">Contact</a></li>
+
                 <?php
                     }
                 if(isset($_SESSION['idClient']) && $page != 'compte'){ ?>
@@ -58,6 +57,9 @@
                 if(isset($_SESSION['idClient'])){ ?>
                     <li class="nav__item"><a href="index.php?page=deconnexion" class="nav__link">Deconnexion</a></li>
                 <?php }
+                    if(isset($_SESSION['idClient'])){ ?>
+                        <li class="nav__item"><a href="index.php?page=panier" class="nav__link">Panier</a></li>
+                    <?php }
                 if($page != "inscription" && !isset($_SESSION['idClient'])){ ?>
                     <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
                 <?php }} ?>

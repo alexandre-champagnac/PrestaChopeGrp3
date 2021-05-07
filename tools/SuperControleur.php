@@ -59,11 +59,21 @@ class SuperControleur
                 include_once "pages/inscription/ControlleurInscription.php";
                 $instance3 = new ControlleurInscription();
                 $instance3->includeView();
+                if(!empty($_POST['pseudo']) && !empty($_POST['mdp']))
+                {
+                    $instance3->register($_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['password'], $_POST['mail'], $_POST['adresse']);
+                }
                 break;
             case "contact" :
                 include_once ("pages/contactpage/ControlleurContact.php");
-                $instance2 = new ControlleurContact();
-                $instance2->includeview();
+                $instance4 = new ControlleurContact();
+                $instance4->includeview();
+                break;
+            case "panier" :
+                include_once ("pages/panier/ControlleurPanier.php");
+                $instance5 = new ControlleurPanier();
+                $instance5->includeView();
+
                 break;
 
         }

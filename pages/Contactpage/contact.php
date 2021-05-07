@@ -76,7 +76,7 @@
             <textarea class="form-control" rows="5" cols="50" id="message" name="message" placeholder="Dites nous tout" tabindex="4"></textarea>
         </div>
         <div>
-            <button class="learn-more">En apprendre plus</button>
+            <button class="learn-more">Envoyer</button>
         </div>
     </form>
 
