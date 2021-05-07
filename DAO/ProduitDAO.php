@@ -53,4 +53,12 @@ class ProduitDAO
         }
         return $tab;
     }
+    public static function getProduitById($id){
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('SELECT * FROM produit WHERE idProduit = ?');
+        $reponse->execute(array($id));
+        $result = $reponse->fetch();
+        $produit = new ProduitDTO($result['idProduit'], $result['nom'], $result['datePeremption'], $result['quantite'],$result['prix'],$result['photo']);
+        return $produit;
+    }
 }
