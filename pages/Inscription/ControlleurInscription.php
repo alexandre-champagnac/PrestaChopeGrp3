@@ -1,6 +1,6 @@
 <?php
 
-
+include_once "DAO/ClientDAO.php";
 class ControlleurInscription
 {
     public function includeView()

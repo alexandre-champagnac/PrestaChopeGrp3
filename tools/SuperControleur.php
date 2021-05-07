@@ -59,7 +59,7 @@ class SuperControleur
                 include_once "pages/inscription/ControlleurInscription.php";
                 $instance3 = new ControlleurInscription();
                 $instance3->includeView();
-                if(!empty($_POST['pseudo']) && !empty($_POST['mdp']))
+                if(!empty($_POST['pseudo']) && !empty($_POST['password']))
                 {
                     $instance3->register($_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['password'], $_POST['mail'], $_POST['adresse']);
                 }
