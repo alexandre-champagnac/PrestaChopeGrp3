@@ -12,18 +12,24 @@ include_once "DAO/ProduitDAO.php";
 $produit = ProduitDAO::getProduitById($_GET['id']);
 ?>
 <main class="page">
-    <h4 class="titreProduit"><?php echo $produit->getNomProduit(); ?></h4>
-    <img src="<?php echo $produit->getPhoto() ?>" alt=""/>
-    <div class="AlignPanier">
-        <div class="prix">
-            <p>Prix :</p>
-            <p class="ParaPrix"><?php echo $produit->getPrix(); ?></p>
+
+    <div class="produitContainer">
+        <h4 class="titreProduit"><?php echo $produit->getNomProduit(); ?></h4>
+        <div class="imgProduit">
+            <img  src="<?php echo $produit->getPhoto() ?>" alt=""/>
         </div>
-        <button class="ajoutpanier"><a href=""> ajouter au pannier </a></button>
+        <div class="AlignPanier">
+            <div class="prix">
+                <p>Prix :</p>
+                <p class="ParaPrix"><?php echo $produit->getPrix(); ?></p>
+            </div>
+            <button class="ajoutpanier"><a href=""> ajouter au pannier </a></button>
+        </div>
+        <div>
+            <p>Information sur le produit :</p><br>
+            <p><?php echo $produit->getDescription(); ?></p>
+        </div>
     </div>
-    <div>
-        <p>Information sur le produit :</p><br>
-        <p><?php echo $produit->getDescription(); ?></p>
 
 
 </main>
