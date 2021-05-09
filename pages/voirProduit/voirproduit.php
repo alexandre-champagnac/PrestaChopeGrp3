@@ -23,7 +23,7 @@ $produit = ProduitDAO::getProduitById($_GET['id']);
                 <p>Prix :</p>
                 <p class="ParaPrix"><?php echo $produit->getPrix(); ?></p>
             </div>
-            <button class="ajoutpanier"><a href=""> ajouter au pannier </a></button>
+            <button class="ajoutpanier"><a href="index.php?page=ajoutproduit&id= <?php echo $produit->getIdProduit(); ?>"> ajouter au pannier </a></button>
         </div>
         <div>
             <p>Information sur le produit :</p><br>

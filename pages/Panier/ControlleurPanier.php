@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 class ControlleurPanier
 {
     public function includeView()

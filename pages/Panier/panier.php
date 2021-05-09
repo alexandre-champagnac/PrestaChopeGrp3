@@ -1,10 +1,3 @@
-<?php
-
-
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +6,11 @@
     <link rel="stylesheet" href="assets/css/style_panier.css">
 </head>
 <body>
-
+<!--PHP-->
+<?php
+include_once "DAO/ProduitDAO.php";
+?>
+<!--Fin-->
 
     <div class="container-fluid">
         <div class="col-md-12">
@@ -23,6 +20,12 @@
                 </div>
                 <div class="col-md-6">
                     <h2 class="text-center">Produits Selectionés</h2>
+                    <?php
+                        foreach ($_SESSION['pannier'] as $value){ ?>
+                            <img  src="<?php echo $value->getPhoto(); ?>" alt=""/>
+                            <h4 class="titreProduit"><?php echo $value->getNomProduit(); ?></h4>
+                            <p class="ParaPrix"><?php echo $value->getPrix(); ?></p>
+                        <?php } ?>
                 </div>
             </div>
         </div>
