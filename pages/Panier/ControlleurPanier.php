@@ -4,7 +4,7 @@ class ControlleurPanier
 {
     public function includeView()
     {
-        include_once "pages/panier/panier.php";
+        include_once "pages/Panier/panier.php";
     }
 
 

@@ -80,12 +80,12 @@ class SuperControleur
             case "ajoutproduit" :
                 include_once "pages/ajoutproduit/ControllerAddProduit.php";
                 $instance = new ControllerAddProduit();
-                if (!empty($_GET['id'])){
+                if (!empty($_POST['id']) && !empty($_POST['quantite'])){
                     if(!empty($_SESSION['idClient'])) {
-                        $instance->addproduit($_GET['id']);
+                        $instance->addproduit($_POST['id'],$_POST['quantite']);
                     }
                 }
-                header("Location: index.php?page=accueil");
+                header("Location: index.php?page=panier");
 
         }
     }

@@ -16,20 +16,24 @@ $produit = ProduitDAO::getProduitById($_GET['id']);
     <div class="produitContainer">
         <h4 class="titreProduit"><?php echo $produit->getNomProduit(); ?></h4>
         <div class="imgProduit">
-            <img  src="<?php echo $produit->getPhoto() ?>" alt=""/>
+            <img src="<?php echo $produit->getPhoto() ?>" alt=""/>
         </div>
         <div class="AlignPanier">
             <div class="prix">
                 <p>Prix :</p>
                 <p class="ParaPrix"><?php echo $produit->getPrix(); ?></p>
             </div>
-            <button class="ajoutpanier"><a href="index.php?page=ajoutproduit&id= <?php echo $produit->getIdProduit(); ?>"> ajouter au pannier </a></button>
         </div>
         <div>
             <p>Information sur le produit :</p><br>
             <p><?php echo $produit->getDescription(); ?></p>
         </div>
     </div>
+    <form method="post" action="index.php?page=ajoutproduit">
+        <input type="hidden" name="id" value="<?php echo $produit->getIdProduit() ;?>">
+        <input type="number" min="1" max="<?php echo $produit->getQuantité(); ?>" name="quantite" placeholder="quantité">
+        <input type="submit" value="Ajouter au panier">
+    </form>
 
 
 </main>

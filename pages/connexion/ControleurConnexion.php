@@ -13,7 +13,7 @@ class ControleurConnexion
                 if ($verif != null) {
                 $_SESSION['idClient'] = $verif->getIdClient();
                 $_SESSION['isAdmin'] = $verif->getIsAdmin();
-                $_SESSION['pannier'] = array();
+                $_SESSION['panier'] = array();
                 return true;
             }
             else {
