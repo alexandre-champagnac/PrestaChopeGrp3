@@ -11,16 +11,15 @@ include_once 'DAO/ClientDAO.php';
 include_once 'DTO/ClientDTO.php';
 $client = ClientDAO::getInfos($_SESSION['idClient']);
 ?>
-<form action="index.php?page=compte&id=<?php echo $_SESSION['idClient']; ?>" method="post">
-    <div>
-        <label for="pseudo">Modifier votre pseudo:</label>
-        <input type="text" id="pseudo" name="pseudo" value="<?php echo $client->getPseudo(); ?>"/>
+<p style="margin-top: 5rem">MODIFIER VOTRE COMPTE : </p>
+<form action="index.php?page=modifcompte" method="post">
+    <div style="display: flex; flex-direction: column">
 
         <label for="nom">Modifier votre Nom</label>
-        <input type="text" id="nom" name="nom" value="<?php echo $client->getNom(); ?>"/>
+        <input type="text" id="nom" name="nom" minlength="3" value="<?php echo $client->getNom(); ?>"/>
 
         <label for="Prenom">Modifier votre Prenom</label>
-        <input type="text" id="Prenom" name="Prenom" value="<?php echo $client->getPrenom(); ?>"/>
+        <input type="text" id="prenom" name="prenom" value="<?php echo $client->getPrenom(); ?>"/>
 
         <label for="adresse">Modifier votre adresse</label>
         <input type="text" id="adresse" name="adresse" value="<?php echo $client->getAdresse(); ?>"/>

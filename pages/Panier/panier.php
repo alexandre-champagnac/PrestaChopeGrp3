@@ -25,13 +25,13 @@ include_once "DAO/ProduitDAO.php";
                         foreach ($_SESSION['panier'] as $value){;
                             $produit = ProduitDAO::getProduitById($value[0]);?>
                             <img  src="<?php echo $produit->getPhoto(); ?>" alt=""/>
-                            <p href="">X</p>
+                            <button><a href="index.php?page=supprPanier">supprimer</a></button>
                             <h4> <?php echo $produit->getNomProduit(); ?></h4>
                             <p class="ParaPrix"><?php echo $produit->getPrix() ."X". $value[1];?></p>
 
                         <?php $total += $produit->getPrix() * $value[1]; } ?>
-                    <p>Total : <?php echo $total; ?></p>
-                    <button><a href="">Commander maintenant !</a></button>
+                    <p style="color: #0eadaa">Total : <?php echo $total; ?></p>
+                    <button><a href="index.php?page=commander">Commander maintenant !</a></button>
                 </div>
             </div>
         </div>

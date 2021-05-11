@@ -72,11 +72,10 @@ class ClientDAO
         }
         return null;
     }
-    public function modifInfo($client){
-            $password = sha1($client->getPassword);
+    public static function modifInfo($nom,$prenom,$mail,$adresse,$id){
             $bdd = DatabaseLinker::getConnexion();
-            $reponse = $bdd->prepare('UPDATE client SET nom = ?,prenom = ?, pseudo = ?, password = ?, mail = ? adresse = ? WHERE idClient = ?');
-            $reponse->execute(array($client->getNom,$client->getPrenom,$client->getPseudo,$password,$client->getMail,$client->getAdresse,$client->getIdClient));
+            $reponse = $bdd->prepare('UPDATE clients SET nom = ?,prenom = ?, mail = ?,adresse = ? WHERE idClient = ?');
+            $reponse->execute(array($nom,$prenom,$mail,$adresse,$id));
 
     }
 }

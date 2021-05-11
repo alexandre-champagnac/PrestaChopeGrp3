@@ -9,5 +9,6 @@ class ControllerVoirProduit{
 
     public function getProduitById($id){
         $produit = ProduitDAO::getProduitById($id);
+        return $produit;
     }
 }

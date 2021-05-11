@@ -86,6 +86,14 @@ class SuperControleur
                     }
                 }
                 header("Location: index.php?page=panier");
+            case "modifcompte" :
+                include_once "pages/modifcompte/ControllerModifCompte.php";
+                $instance = new ControllerModifCompte();
+                if (!empty($_SESSION['idClient']) && !empty($_POST['prenom'])) {
+                    $instance->modifCompte($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'],$_SESSION['idClient']);
+                }
+                header("Location: index.php?page=accueil");
+                break;
 
         }
     }
