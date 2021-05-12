@@ -71,6 +71,7 @@ class SuperControleur
                 include_once ("pages/panier/ControlleurPanier.php");
                 $instance5 = new ControlleurPanier();
                 $instance5->includeView();
+
                 break;
 
             case "voirProduit" :
