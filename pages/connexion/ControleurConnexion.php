@@ -14,6 +14,8 @@ class ControleurConnexion
                 $_SESSION['idClient'] = $verif->getIdClient();
                 $_SESSION['isAdmin'] = $verif->getIsAdmin();
                 $_SESSION['panier'] = array();
+                $_SESSION['panier'][0] = array(1,18);
+                $_SESSION['panier'][1] = array(1,10);
                 return true;
             }
             else {
