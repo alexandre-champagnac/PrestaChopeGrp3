@@ -28,10 +28,11 @@ include_once "DAO/ProduitDAO.php";
                             <button><a href="index.php?page=supprPanier">supprimer</a></button>
                             <h4> <?php echo $produit->getNomProduit(); ?></h4>
                             <p class="ParaPrix"><?php echo $produit->getPrix() ."X". $value[1];?></p>
-
-                        <?php $total += $produit->getPrix() * $value[1]; } ?>
-                    <p style="color: #0eadaa">Total : <?php echo $total; ?></p>
-                    <button><a href="index.php?page=commander">Commander maintenant !</a></button>
+                    <?php }if(!empty($_SESSION['panier'])){ $total += $produit->getPrix() * $value[1];?>
+                        <p>Total : <?php echo $total; ?> </p>
+                        <button><a href="index.php?page=commander">Commander maintenant !</a></button>
+                    <?php }
+                    else{ echo "Votre panier est vide"; } ?>
                 </div>
             </div>
         </div>

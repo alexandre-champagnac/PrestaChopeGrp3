@@ -72,10 +72,15 @@ class ClientDAO
         }
         return null;
     }
-    public static function modifInfo($nom,$prenom,$mail,$adresse,$id){
+    public static function modifInfo($nom,$prenom,$mail,$adresse,$pseudo,$id){
             $bdd = DatabaseLinker::getConnexion();
-            $reponse = $bdd->prepare('UPDATE clients SET nom = ?,prenom = ?, mail = ?,adresse = ? WHERE idClient = ?');
-            $reponse->execute(array($nom,$prenom,$mail,$adresse,$id));
+            $reponse = $bdd->prepare('UPDATE clients SET nom = ?,prenom = ?, mail = ?,adresse = ?,pseudo = ? WHERE idClient = ?');
+            $reponse->execute(array($nom,$prenom,$mail,$adresse,$pseudo,$id));
 
+    }
+    public static function modifPassword($password,$id){
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('UPDATE clients SET password = ? WHERE idClient = ?');
+        $reponse->execute(array(sha1($password),$id));
     }
 }

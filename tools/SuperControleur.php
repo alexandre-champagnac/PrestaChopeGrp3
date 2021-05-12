@@ -27,9 +27,9 @@ class SuperControleur
                 break;
 
             case"compte":
-                include_once ("pages/infoCompte/ControleurInfoCompte.php");
-                $instance1 = new ControleurInfoCompte();
                 if (!empty($_SESSION['idClient'])){
+                    include_once ("pages/infoCompte/ControleurInfoCompte.php");
+                    $instance1 = new ControleurInfoCompte();
                     $instance1->includeView();
                 }
                 else{
@@ -60,9 +60,11 @@ class SuperControleur
                 break;
 
             case "contact" :
-                include_once ("pages/contactpage/ControlleurContact.php");
-                $instance4 = new ControlleurContact();
-                $instance4->includeview();
+                if (!empty($_SESSION['idClient'])) {
+                    include_once("pages/contactpage/ControlleurContact.php");
+                    $instance4 = new ControlleurContact();
+                    $instance4->includeview();
+                }
                 break;
 
             case "panier" :
@@ -78,19 +80,25 @@ class SuperControleur
                 break;
 
             case "ajoutproduit" :
-                include_once "pages/ajoutproduit/ControllerAddProduit.php";
-                $instance = new ControllerAddProduit();
-                if (!empty($_POST['id']) && !empty($_POST['quantite'])){
-                    if(!empty($_SESSION['idClient'])) {
-                        $instance->addproduit($_POST['id'],$_POST['quantite']);
-                    }
+                if(!empty($_SESSION['idClient'])) {
+                    include_once "pages/ajoutproduit/ControllerAddProduit.php";
+                    $instance = new ControllerAddProduit();
+                    if (!empty($_POST['id']) && !empty($_POST['quantite'])){
+
+                            $instance->addproduit($_POST['id'],$_POST['quantite']);
+                        }
                 }
                 header("Location: index.php?page=panier");
             case "modifcompte" :
                 include_once "pages/modifcompte/ControllerModifCompte.php";
                 $instance = new ControllerModifCompte();
                 if (!empty($_SESSION['idClient']) && !empty($_POST['prenom'])) {
-                    $instance->modifCompte($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'],$_SESSION['idClient']);
+                    $instance->modifCompte($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['adresse'],$_POST['pseudo'],$_SESSION['idClient']);
+                }
+                if(!empty($_POST['password'] && !empty($_POST['newpassword']))){
+                    if($_POST['password'] == $_POST['newpassword']){
+                        $instance->modifPassword($_POST['password'],$_SESSION['idClient']);
+                    }
                 }
                 header("Location: index.php?page=accueil");
                 break;
