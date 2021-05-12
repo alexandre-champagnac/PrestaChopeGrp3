@@ -3,7 +3,7 @@
 class ControleurInfoCompte{
     public function includeView()
     {
-        include_once "pages/infoCompte/ModificationCompte.php";
+        include_once "pages/infoCompte/EditCompte.php";
     }
     public function authenticate($pseudo, $mdp)
     {
