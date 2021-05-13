@@ -90,6 +90,7 @@ class SuperControleur
                         }
                 }
                 header("Location: index.php?page=panier");
+                break;
             case "modifcompte" :
                 include_once "pages/modifcompte/ControllerModifCompte.php";
                 $instance = new ControllerModifCompte();
@@ -102,6 +103,15 @@ class SuperControleur
                     }
                 }
                 header("Location: index.php?page=accueil");
+                break;
+            case "deleteprod" :
+                if(!empty($_SESSION['panier'])){
+                    include_once "DAO/DeleteProdDAO.php";
+                    if(!empty($_SESSION['panier'])){
+                        DeleteProdDAO::deleteprod($_GET['id']);
+                    }
+                    header("Location: index.php?page=accueil");
+                }
                 break;
 
         }
