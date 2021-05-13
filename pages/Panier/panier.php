@@ -38,6 +38,7 @@ include_once "DAO/ProduitDAO.php";
         <td><?php echo $quantite;?></td>
         <td><?php echo $prix. '€';?></td>
         <td><?php echo $somme. '€';?></td>
+        <td><button><a href="index.php?page=deleteprod">Supprimer</a></button></td>
         </tr>
         <?php
 
@@ -47,7 +48,6 @@ include_once "DAO/ProduitDAO.php";
         <td>Prix total à payer :</td>
         <td><?php echo $total. '€'; ?></td>
         <td><button><a href="index.php?page=commander">Commander</a></button></td>
-
     </tr>
     </tbody>
 </table>
