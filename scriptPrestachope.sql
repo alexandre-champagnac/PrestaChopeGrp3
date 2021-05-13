@@ -1,7 +1,6 @@
 DROP DATABASE IF EXISTS prestachope3;
 CREATE DATABASE prestachope3;
 USE prestachope3;
-
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
@@ -19,9 +18,8 @@ CREATE TABLE Clients(
                         password Varchar (255) NOT NULL ,
                         mail     Varchar (100) NOT NULL ,
                         adresse  Varchar (50) NOT NULL ,
-                        cagnotte Float NOT NULL ,
-                        avatar   Text NOT NULL ,
-                        isAdmin  Int NOT NULL
+                        cagnotte Float NOT NULL DEFAULT(50) ,
+                        isAdmin  Int NOT NULL DEFAULT(0)
     ,CONSTRAINT Clients_PK PRIMARY KEY (idClient)
 )ENGINE=InnoDB;
 
@@ -31,10 +29,12 @@ CREATE TABLE Clients(
 #------------------------------------------------------------
 
 CREATE TABLE Produit(
-                        idProduit      Int  Auto_increment  NOT NULL ,
-                        prix           Float NOT NULL ,
-                        datePeremption Date NOT NULL ,
-                        quantite       Int NOT NULL
+                        idProduit Int  Auto_increment  NOT NULL ,
+                        nom       Text NOT NULL ,
+                        photo     Text NOT NULL ,
+                        prix      Float NOT NULL ,
+                        quantite  Int NOT NULL,
+                        description LONGTEXT NOT NULL
     ,CONSTRAINT Produit_PK PRIMARY KEY (idProduit)
 )ENGINE=InnoDB;
 
@@ -118,7 +118,8 @@ CREATE TABLE facture(
 
 CREATE TABLE ProduitCommande(
                                 idProduit  Int NOT NULL ,
-                                idCommande Int NOT NULL
+                                idCommande Int NOT NULL ,
+                                quantite   Int NOT NULL
     ,CONSTRAINT ProduitCommande_PK PRIMARY KEY (idProduit,idCommande)
 )ENGINE=InnoDB;
 
@@ -177,3 +178,4 @@ ALTER TABLE ProduitCommande
     ADD CONSTRAINT ProduitCommande_Commande1_FK
         FOREIGN KEY (idCommande)
             REFERENCES Commande(idCommande);
+

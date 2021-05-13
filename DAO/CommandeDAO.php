@@ -4,14 +4,9 @@ include_once "DAO/ProduitDAO.php";
 
 class CommandeDAO
 {
-    public function commander($panier){
-        $nbproduit= count($panier);
-        $montantTotal = 0;
-        for($i = 0 ; $i < count($panier);$i++){
-            $produit = ProduitDAO::getProduitById($panier[0]);
-            $montantTotal = $produit->getPrix() + $panier[1];
-        }
+    public static function commander($nbProduit,$montant,$idClient){
         $bdd = DatabaseLinker::getConnexion();
-        $
+        $reponse = $bdd->prepare("INSERT INTO commande(nbProduit,montant,idClient)VALUES(?,?,?)");
+        $reponse->execute(array($nbProduit,$montant,$idClient));
     }
 }
