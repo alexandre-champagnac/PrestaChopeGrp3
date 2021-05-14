@@ -53,15 +53,16 @@
                 <?php }
                 if(!isset($_SESSION['idClient']) && $page != 'inscription'){ ?>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion</a></li>
+                    <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
                 <?php }
                 if(isset($_SESSION['idClient'])){ ?>
                     <li class="nav__item"><a href="index.php?page=deconnexion" class="nav__link">Deconnexion</a></li>
                 <?php }
-                    if(isset($_SESSION['idClient'])){ ?>
-                        <li class="nav__item"><a href="index.php?page=panier" class="nav__link">Panier</a></li>
-                    <?php }
-                if($page != "inscription" && !isset($_SESSION['idClient'])){ ?>
-                    <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
+                if(isset($_SESSION['idClient'])){ ?>
+                    <li class="nav__item"><a href="index.php?page=panier" class="nav__link">Panier</a></li>
+                <?php }
+                if(!empty($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1){ ?>
+                    <li class="nav__item"><a href="index.php?page=sectionAdmin" class="nav__link">Section Admin</a></li>
                 <?php }} ?>
 
 
