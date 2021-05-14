@@ -1,5 +1,5 @@
 body{
-    background-color: #1D2521;
+    background-color: var(--body-color);
 }
 
 h1{
@@ -35,11 +35,22 @@ h1{
 }
 
 .content-table tbody tr:nth-of-type(even){
-    background-color: #393939;
+    background: var(--body-color);
 }
 
 .content-table tbody tr:last-of-type{
     border-bottom: 2px solid #009879;
+
+}
+
+button{
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg,#009879,#048654);
 
 }
 

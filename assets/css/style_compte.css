@@ -29,7 +29,8 @@ img{
 }
 
 input[type="text"],
-input[type="email"]{
+input[type="email"],
+input[type="password"]{
     display: block;
     box-sizing: border-box;
     background: none;
@@ -46,9 +47,19 @@ input[type="email"]{
 }
 
 input[type="text"]:focus,
-input[type="email"]:focus{
+input[type="email"]:focus,
+input[type="password"]:focus{
     border-bottom: 2px solid #38d39f;
     border-bottom-right-radius: 20px;
     color: #32be8f;
     transition: 0.2s ease;
+}
+
+.submitbutton{
+    position: relative;
+    top: -32px;
+    text-decoration: none;
+    background: #009879;
+    border-radius: 20px;
+    color: #FFF;
 }
