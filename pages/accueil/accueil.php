@@ -70,6 +70,7 @@
             }else{
                 $produits = ProduitDAO::produitCategorie($_GET['id']);
             }
+            if($produits != null ){
                 foreach ($produits as $value){
                     if($value->getQuantité() > 0){ ?>
 
@@ -80,7 +81,7 @@
                                 <span class="menu__preci"> <?php echo $value->getPrix(); ?>€</span>
                                 <a href="index.php?page=voirProduit&id=<?php echo $value->getIdProduit() ; ?>" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
                             </div>
-            <?php }}?>
+            <?php }}}else{ ?><h3>Il n'y a pas encore de produits ici pour le moment</h3>    <?php } ?>
             </div>
         </section>
     </div>
