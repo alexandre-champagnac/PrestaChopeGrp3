@@ -1,5 +1,6 @@
 <?php
 include_once "DAO/ProduitDAO.php";
+include_once "DAO/CategorieDAO.php";
 class ControllerAccueil
 {
     public function includeview(){

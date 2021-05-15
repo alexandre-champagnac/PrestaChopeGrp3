@@ -561,3 +561,6 @@ img{
         height: 640px;
     }
 }
+.categorie{
+  display:flex;
+}

@@ -18,24 +18,9 @@ CREATE TABLE Clients(
                         password Varchar (255) NOT NULL ,
                         mail     Varchar (100) NOT NULL ,
                         adresse  Varchar (50) NOT NULL ,
-                        cagnotte Float NOT NULL DEFAULT(50) ,
+                        cagnotte Float NOT NULL DEFAULT(400) ,
                         isAdmin  Int NOT NULL DEFAULT(0)
     ,CONSTRAINT Clients_PK PRIMARY KEY (idClient)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: Produit
-#------------------------------------------------------------
-
-CREATE TABLE Produit(
-                        idProduit Int  Auto_increment  NOT NULL ,
-                        nom       Text NOT NULL ,
-                        photo     Text NOT NULL ,
-                        prix      Float NOT NULL ,
-                        quantite  Int NOT NULL,
-                        description LONGTEXT NOT NULL
-    ,CONSTRAINT Produit_PK PRIMARY KEY (idProduit)
 )ENGINE=InnoDB;
 
 
@@ -44,8 +29,25 @@ CREATE TABLE Produit(
 #------------------------------------------------------------
 
 CREATE TABLE categorie(
-                          idCategorie Int  Auto_increment  NOT NULL
+                          idCategorie Int  Auto_increment  NOT NULL ,
+                          nom         Varchar (20) NOT NULL
     ,CONSTRAINT categorie_PK PRIMARY KEY (idCategorie)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Produit
+#------------------------------------------------------------
+
+CREATE TABLE Produit(
+                        idProduit   Int  Auto_increment  NOT NULL ,
+                        nom         Text NOT NULL ,
+                        photo       Text NOT NULL ,
+                        prix        Float NOT NULL ,
+                        quantite    Int NOT NULL ,
+                        description Text NOT NULL ,
+                        idCategorie Int NOT NULL
+    ,CONSTRAINT Produit_PK PRIMARY KEY (idProduit)
 )ENGINE=InnoDB;
 
 
@@ -71,17 +73,6 @@ CREATE TABLE Entreprise(
                            Tresorie     Float NOT NULL ,
                            nbCommande   Int NOT NULL
     ,CONSTRAINT Entreprise_PK PRIMARY KEY (idEntreprise)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: Appartient
-#------------------------------------------------------------
-
-CREATE TABLE Appartient(
-                           idProduit   Int NOT NULL ,
-                           idCategorie Int NOT NULL
-    ,CONSTRAINT Appartient_PK PRIMARY KEY (idProduit,idCategorie)
 )ENGINE=InnoDB;
 
 
@@ -126,6 +117,11 @@ CREATE TABLE ProduitCommande(
 
 
 
+ALTER TABLE Produit
+    ADD CONSTRAINT Produit_categorie0_FK
+        FOREIGN KEY (idCategorie)
+            REFERENCES categorie(idCategorie);
+
 ALTER TABLE commentaire
     ADD CONSTRAINT commentaire_Produit0_FK
         FOREIGN KEY (idProduit)
@@ -135,16 +131,6 @@ ALTER TABLE commentaire
     ADD CONSTRAINT commentaire_Clients1_FK
         FOREIGN KEY (idClient)
             REFERENCES Clients(idClient);
-
-ALTER TABLE Appartient
-    ADD CONSTRAINT Appartient_Produit0_FK
-        FOREIGN KEY (idProduit)
-            REFERENCES Produit(idProduit);
-
-ALTER TABLE Appartient
-    ADD CONSTRAINT Appartient_categorie1_FK
-        FOREIGN KEY (idCategorie)
-            REFERENCES categorie(idCategorie);
 
 ALTER TABLE Commande
     ADD CONSTRAINT Commande_Clients0_FK
@@ -178,4 +164,3 @@ ALTER TABLE ProduitCommande
     ADD CONSTRAINT ProduitCommande_Commande1_FK
         FOREIGN KEY (idCommande)
             REFERENCES Commande(idCommande);
-
