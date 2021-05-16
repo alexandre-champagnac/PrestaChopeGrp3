@@ -21,6 +21,7 @@
 
 <!--- Php --->
 <?php
+    session_name("prestachope3");
     session_start();
     $page = "accueil";
     include_once("tools/SuperControleur.php");
