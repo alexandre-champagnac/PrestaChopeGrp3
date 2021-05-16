@@ -32,13 +32,6 @@
 ?>
 <!--========== Le header ==========-->
 <header class="l-header" id="header">
-    <?php
-    if($page == "addProduit")
-    {
-        SuperControleur::callPage($page);
-    }
-    ?>
-
     <nav class="nav bd-container">
         <a href="#" class="nav__logo">PrestaChope3</a>
 
