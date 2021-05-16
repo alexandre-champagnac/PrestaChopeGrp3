@@ -6,8 +6,16 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>addProduit   </title>
 </head>
+<div class="addProduit">
+    <h4>Nom des categorie</h4>
+    <?php
+    $listeCategorie = controllerAddProduit::listeCategorie();
+    foreach ($listeCategorie as $value)
+    {
 
-<div class="addProduit"
+        echo $value['idCategorie']." ". $value['nom']."</br>";
+    }
+    ?>
 <body>
     <form action="index.php?page=addProduit" method="post">
 
