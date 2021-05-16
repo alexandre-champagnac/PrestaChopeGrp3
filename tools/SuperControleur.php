@@ -128,10 +128,12 @@ class SuperControleur
                     $instance4->addProduit($_POST['nomProduit'],$_POST['prixProduit'],$_POST['quantiteProduit'],$_POST['descProduit'],$_POST['idCategorie']);
                 }
                 break;
-            case "listeUser" :
+            case "ListeUser" :
+                echo "eee";
                 include_once "pages/ListeUser/ControllerListeUser.php";
                 $instance5 = new ControllerListeUser();
                 $instance5->includeView();
+
                 break;
 
         }
