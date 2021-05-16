@@ -65,18 +65,6 @@ CREATE TABLE commentaire(
 
 
 #------------------------------------------------------------
-# Table: Entreprise
-#------------------------------------------------------------
-
-CREATE TABLE Entreprise(
-                           idEntreprise Int  Auto_increment  NOT NULL ,
-                           Tresorie     Float NOT NULL ,
-                           nbCommande   Int NOT NULL
-    ,CONSTRAINT Entreprise_PK PRIMARY KEY (idEntreprise)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
 # Table: Commande
 #------------------------------------------------------------
 
@@ -161,10 +149,8 @@ INSERT INTO categorie(idcategorie, nom)
 VALUES('2','encas');
 
 INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
-VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region','1');
-
-INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
-VALUES ('Blonde', '7', '50', 'assets/img/blonde.png', 'une chouffe de region','1');
+VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region','1')?
+('Blonde', '7', '50', 'assets/img/blonde.png', 'une chouffe de region','1');
 
 INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
 VALUES ('Springles', '2', '50', 'assets/img/pringles.png', 'Vous vous laisserez tenter','2');

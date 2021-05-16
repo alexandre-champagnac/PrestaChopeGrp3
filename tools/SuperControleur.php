@@ -123,19 +123,32 @@ class SuperControleur
                 include_once "pages/addProduit/ControllerAddProduit.php";
                 $instance4 = new ControllerAddProduit();
                 $instance4->includeView();
-                if(!empty($_POST['nomProduit']) && !empty($_POST['prixProduit']))
-                {
-                    $instance4->addProduit($_POST['nomProduit'],$_POST['prixProduit'],$_POST['quantiteProduit'],$_POST['descProduit'],$_POST['idCategorie']);
-                }
                 break;
             case "ListeUser" :
                 include_once "pages/ListeUser/ControllerListeUser.php";
                 $instance5 = new ControllerListeUser();
                 $instance5->includeView();
-
                 break;
+
             case "admin" :
                 include_once "pages/admin/admin.php";
+                break;
+
+            case "supprCompte" :
+                if (!empty($_GET['id'])){
+                    include_once "DAO/ClientDAO.php";
+                    ClientDAO::supprimerCompte($_GET['id']);
+                }
+                header('Location: index.php?page=accueil');
+                break;
+            case "actAjoutProd" :
+                include_once "pages/addProduit/ControllerAddProduit.php";
+                $instance4 = new ControllerAddProduit();
+                if(!empty($_POST['nomProduit']) && !empty($_POST['prixProduit']))
+                {
+                    $instance4->addProduit($_POST['nomProduit'],$_POST['prixProduit'],$_POST['quantiteProduit'],$_POST['descProduit'],$_POST['idCategorie'],$_POST['importation']);
+                }
+                break;
 
 
         }

@@ -74,10 +74,19 @@ class ProduitDAO
         $reponse->execute(array($produit->getPrix, $produit->getNom, $produit->getPhoto, $produit->getQuantite, $produit->getIdProduit, $produit->getDescription));
     }
 
-    public static function addProduit($nom,$prix,$quantite,$desc,$idCategorie)
-    {
-        $bdd = DatabaseLinker::getConnexion();
-        $reponse = $bdd->prepare('INSERT INTO produit (nom,prix,quantite,description,idCategorie) VALUES (?,?,?,?,?)');
-        $reponse->execute(array($nom,$prix,$quantite,$desc,$idCategorie));
+
+    public static function imgProduit($image) {
+        var_dump($image);
+        $dossier = 'assets/img';
+        $fichier = basename($_FILES['importation']['name']);
+        move_uploaded_file($_FILES['importation']['tmp_name'], $dossier . $fichier);
+        $chemin =  $dossier . $fichier ;
+        return $chemin;
     }
+    public static function addProduit($nom,$prix,$quantite,$desc,$idCategorie,$image)
+{
+    $bdd = DatabaseLinker::getConnexion();
+    $reponse = $bdd->prepare('INSERT INTO produit(nom,prix,quantite,description,idCategorie,photo) VALUES (?,?,?,?,?,?)');
+    $reponse->execute(array($nom,$prix,$quantite,$desc,$idCategorie,$image));
+}
 }

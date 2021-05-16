@@ -91,4 +91,9 @@ class ClientDAO
         $result = $reponse->fetchAll();
         return $result;
     }
+    public static function supprimerCompte($id){
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('DELETE FROM clients WHERE idClient = ?');
+        $reponse->execute(array($id));
+    }
 }

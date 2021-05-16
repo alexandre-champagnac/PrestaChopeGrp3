@@ -10,9 +10,9 @@ class controllerAddProduit
     }
 
 
-    public function addProduit($nom,$prix,$quantite,$desc,$idCategorie)
+    public function addProduit($nom,$prix,$quantite,$desc,$idCategorie,$image)
     {
-        ProduitDAO::addProduit($nom,$prix,$quantite,$desc,$idCategorie);
+        ProduitDAO::addProduit($nom,$prix,$quantite,$desc,$idCategorie,$image);
     }
     public function listeCategorie()
     {
