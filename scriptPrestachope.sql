@@ -149,7 +149,7 @@ INSERT INTO categorie(idcategorie, nom)
 VALUES('2','encas');
 
 INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
-VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region','1')?
+VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region','1'),
 ('Blonde', '7', '50', 'assets/img/blonde.png', 'une chouffe de region','1');
 
 INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
