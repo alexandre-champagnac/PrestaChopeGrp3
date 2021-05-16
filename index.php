@@ -52,7 +52,6 @@
                     <li class="nav__item"><a href="index.php?page=compte" class="nav__link">Modifier Profil</a></li>
                 <?php }
                 if(!isset($_SESSION['idClient']) && $page != 'inscription'){ ?>
-                    <li class="nav__item"><a href="index.php?page=addProduit" class="nav__link">listeUser</a></li>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion</a></li>
                     <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
                 <?php }
@@ -63,8 +62,7 @@
                     <li class="nav__item"><a href="index.php?page=panier" class="nav__link">Panier</a></li>
                 <?php }
                 if(!empty($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1){ ?>
-                    <li class="nav__item"><a href="index.php?page=addProduit" class="nav__link">Ajouter un nouveaux Produit</a></li>
-                    <li class="nav__item"><a href="index.php?page=ListeUser" class="nav__link">Liste des utilisateur</a></li>
+                    <li class="nav__item"><a href="index.php?page=admin" class="nav__link">espace Admin</a></li>
                 <?php }} ?>
 
 

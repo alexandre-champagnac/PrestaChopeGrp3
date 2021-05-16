@@ -129,12 +129,14 @@ class SuperControleur
                 }
                 break;
             case "ListeUser" :
-                echo "eee";
                 include_once "pages/ListeUser/ControllerListeUser.php";
                 $instance5 = new ControllerListeUser();
                 $instance5->includeView();
 
                 break;
+            case "admin" :
+                include_once "pages/admin/admin.php";
+
 
         }
     }

@@ -276,7 +276,7 @@ img{
 /*========== Boutons ==========*/
 .button{
   display: inline-block;
-
+  background-color: var(--first-color);
   color: #FFF;
   padding: .75rem 1rem;
   border-radius: .5rem;
@@ -563,16 +563,4 @@ img{
 }
 .categorie{
   display:flex;
-  align-items: center;
-}
-
-.categorie a{
-  color: var(--first-color);
-  margin: 10px;
-  text-decoration: none;
-}
-
-.categorie p{
-  margin-left: 20px;
-  font-size: 20px;
 }

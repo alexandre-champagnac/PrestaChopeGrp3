@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale 1">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>addProduit   </title>
 </head>
 
+<div class="addProduit"
 <body>
     <form action="index.php?page=addProduit" method="post">
 
@@ -35,5 +37,6 @@
         <input type="submit" class="btn" value="OK">
 
     </form>
+</div>
 </body>
 </html>
