@@ -156,7 +156,8 @@ INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
 VALUES ('Springles', '2', '50', 'assets/img/pringles.png', 'Vous vous laisserez tenter','2');
 
 INSERT INTO clients (nom,prenom,pseudo,password,mail,adresse,cagnotte,isAdmin)
-VALUES ('admin','admin','admin','d033e22ae348aeb5660fc2140aec35850c4da997','admin@gmail.com',500,1);
+VALUES ('admin','admin','admin','d033e22ae348aeb5660fc2140aec35850c4da997','admin@gmail.com',500,1),
+       ('user','user','user','12dea96fec20593566ab75692c9949596833adc9','user@gmail.com',500,0);
 
 
 
