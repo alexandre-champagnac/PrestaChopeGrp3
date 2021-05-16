@@ -155,6 +155,9 @@ VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region',
 INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
 VALUES ('Springles', '2', '50', 'assets/img/pringles.png', 'Vous vous laisserez tenter','2');
 
+INSERT INTO clients (nom,prenom,pseudo,password,mail,adresse,cagnotte,isAdmin)
+VALUES ('admin','admin','admin','d033e22ae348aeb5660fc2140aec35850c4da997','admin@gmail.com',500,1);
+
 
 
 
