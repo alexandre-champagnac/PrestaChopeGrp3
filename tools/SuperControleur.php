@@ -117,7 +117,7 @@ class SuperControleur
                     $commande = new ControleurCommande();
                     $commande->createCommand($_SESSION['idClient']);
                 }
-                //header("Location: index.php?page=accueil");
+                header("Location: index.php?page=accueil");
                 break;
             case "addProduit" :
                 include_once "pages/addProduit/ControllerAddProduit.php";
