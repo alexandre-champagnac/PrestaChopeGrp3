@@ -152,3 +152,19 @@ ALTER TABLE ProduitCommande
     ADD CONSTRAINT ProduitCommande_Commande1_FK
         FOREIGN KEY (idCommande)
             REFERENCES Commande(idCommande);
+
+
+INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
+VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region','1');
+
+INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
+VALUES ('Blonde', '8', '50', 'assets/img/blonde.png', 'une chouffe de region','1');
+
+
+INSERT INTO categorie(idcategorie, nom)
+VALUES('1','biere')
+
+INSERT INTO categorie(idcategorie, nom)
+VALUES('2','encas')
+
+
