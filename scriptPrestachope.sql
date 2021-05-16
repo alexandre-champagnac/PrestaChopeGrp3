@@ -154,17 +154,21 @@ ALTER TABLE ProduitCommande
             REFERENCES Commande(idCommande);
 
 
+INSERT INTO categorie(idcategorie, nom)
+VALUES('1','biere');
+
+INSERT INTO categorie(idcategorie, nom)
+VALUES('2','encas');
+
 INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
 VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region','1');
 
 INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
-VALUES ('Blonde', '8', '50', 'assets/img/blonde.png', 'une chouffe de region','1');
+VALUES ('Blonde', '7', '50', 'assets/img/blonde.png', 'une chouffe de region','1');
+
+INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
+VALUES ('Springles', '2', '50', 'assets/img/pringles.png', 'Vous vous laisserez tenter','2');
 
 
-INSERT INTO categorie(idcategorie, nom)
-VALUES('1','biere')
-
-INSERT INTO categorie(idcategorie, nom)
-VALUES('2','encas')
 
 

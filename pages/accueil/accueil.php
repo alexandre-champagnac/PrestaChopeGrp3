@@ -19,7 +19,7 @@
                 <span class="section-subtitle about__initial">A propos</span>
                 <h2 class="section-title about__initial">Nous sommes un petit <br> bar à bières</h2>
                 <p class="about__description">installez dans la commune de Nantes</p>
-                <a href="#" class="button">En savoir plus</a>
+                <p>Ouvert de 8h à 18h du lundi au vendredi</p>
             </div>
 
             <img src="assets/img/about.jpg" alt="" class="about__img">
@@ -113,7 +113,7 @@
             </div>
 
             <div class="contact__button">
-                <a href="#" class="button">Nous contacter</a>
+                <a href="index.php?page=contact" class="button">Nous contacter</a>
             </div>
         </div>
     </section>
