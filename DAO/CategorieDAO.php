@@ -20,4 +20,11 @@ class CategorieDAO
         }
         return $tabCategories;
     }
+
+    public static function categorie(){
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare("SELECT * FROM Categorie");
+        $reponse->execute(array());
+        $result = $reponse->fetchAll();
+       return $result;}
 }

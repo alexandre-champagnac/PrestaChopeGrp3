@@ -1,5 +1,6 @@
 <?php
 include_once "DAO/ProduitDAO.php";
+include_once "DAO/CategorieDAO.php";
 
 class controllerAddProduit
 {
@@ -9,9 +10,13 @@ class controllerAddProduit
     }
 
 
-    public function addProduit($nom,$prix,$quantite,$desc)
+    public function addProduit($nom,$prix,$quantite,$desc,$idCategorie)
     {
-        ProduitDAO::addProduit($nom,$prix,$quantite,$desc);
+        ProduitDAO::addProduit($nom,$prix,$quantite,$desc,$idCategorie);
+    }
+    public function listeCategorie()
+    {
+        return CategorieDAO::categorie();
     }
 
 

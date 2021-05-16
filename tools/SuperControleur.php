@@ -125,8 +125,12 @@ class SuperControleur
                 $instance4->includeView();
                 if(!empty($_POST['nomProduit']) && !empty($_POST['prixProduit']))
                 {
-                    $instance4->addProduit($_POST['nomProduit'],$_POST['prixProduit'],$_POST['quantiteProduit'],$_POST['descProduit']);
+                    $instance4->addProduit($_POST['nomProduit'],$_POST['prixProduit'],$_POST['quantiteProduit'],$_POST['descProduit'],$_POST['idCategorie']);
                 }
+            case "listeUser" :
+                include_once "pages/ListeUser/ControllerListeUser.php";
+                $instance5 = new ControllerListeUser();
+                $instance5->includeView();
 
         }
     }

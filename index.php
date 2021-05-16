@@ -32,6 +32,7 @@
 ?>
 <!--========== Le header ==========-->
 <header class="l-header" id="header">
+
     <nav class="nav bd-container">
         <a href="#" class="nav__logo">PrestaChope3</a>
 
@@ -62,7 +63,8 @@
                     <li class="nav__item"><a href="index.php?page=panier" class="nav__link">Panier</a></li>
                 <?php }
                 if(!empty($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1){ ?>
-                    <li class="nav__item"><a href="index.php?page=sectionAdmin" class="nav__link">Section Admin</a></li>
+                    <li class="nav__item"><a href="index.php?page=addProduit" class="nav__link">Ajouter un nouveaux Produit</a></li>
+                    <li class="nav__item"><a href="index.php?page=ListeUser" class="nav__link">ListeUser</a></li>
                 <?php }} ?>
 
 

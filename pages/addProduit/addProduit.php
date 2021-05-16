@@ -21,6 +21,17 @@
         <h5>Description du produit</h5>
         <input type="text" class="input" name="descProduit">
 
+        <h5>Selectioner la categories</h5>
+        <SELECT name="idCategorie" size="1">
+            <?php
+            $listeCategorie = controllerAddProduit::listeCategorie();
+            foreach ($listeCategorie as $value)
+            {
+                ?>
+                <OPTION> <?php echo $value['idCategorie'];
+            }
+            ?>
+        </SELECT>
         <input type="submit" class="btn" value="OK">
 
     </form>

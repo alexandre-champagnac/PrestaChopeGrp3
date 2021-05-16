@@ -83,4 +83,5 @@ class ClientDAO
         $reponse = $bdd->prepare('UPDATE clients SET password = ? WHERE idClient = ?');
         $reponse->execute(array(sha1($password),$id));
     }
+
 }

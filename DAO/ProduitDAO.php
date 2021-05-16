@@ -74,10 +74,10 @@ class ProduitDAO
         $reponse->execute(array($produit->getPrix, $produit->getNom, $produit->getPhoto, $produit->getQuantite, $produit->getIdProduit, $produit->getDescription));
     }
 
-    public function addProduit($nom,$prix,$quantite,$desc)
+    public static function addProduit($nom,$prix,$quantite,$desc,$idCategorie)
     {
         $bdd = DatabaseLinker::getConnexion();
-        $reponse = $bdd->prepare("INSERT INTO produit (nom,prix,quantite,description) value  ('?','?','?','?')");
-        $reponse->execute(array($nom,$prix,$quantite,$desc));
+        $reponse = $bdd->prepare('INSERT INTO produit (nom,prix,quantite,description,idCategorie) VALUES (?,?,?,?,?)');
+        $reponse->execute(array($nom,$prix,$quantite,$desc,$idCategorie));
     }
 }
