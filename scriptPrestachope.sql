@@ -18,7 +18,7 @@ CREATE TABLE Clients(
                         password Varchar (255) NOT NULL ,
                         mail     Varchar (100) NOT NULL ,
                         adresse  Varchar (50) NOT NULL ,
-                        cagnotte Float NOT NULL DEFAULT(400) ,
+                        cagnotte Float NOT NULL DEFAULT(500) ,
                         isAdmin  Int NOT NULL DEFAULT(0)
     ,CONSTRAINT Clients_PK PRIMARY KEY (idClient)
 )ENGINE=InnoDB;
@@ -81,12 +81,8 @@ CREATE TABLE Entreprise(
 #------------------------------------------------------------
 
 CREATE TABLE Commande(
-                         idCommande   Int  Auto_increment  NOT NULL ,
-                         nbProduit    Int NOT NULL ,
-                         montant      Float NOT NULL ,
-                         dateCommande TimeStamp NOT NULL ,
-                         idClient     Int NOT NULL ,
-                         idFacture    Int NOT NULL
+                         idCommande Int  Auto_increment  NOT NULL ,
+                         idClient   Int NOT NULL
     ,CONSTRAINT Commande_PK PRIMARY KEY (idCommande)
 )ENGINE=InnoDB;
 
@@ -98,7 +94,8 @@ CREATE TABLE Commande(
 CREATE TABLE facture(
                         idFacture  Int  Auto_increment  NOT NULL ,
                         montant    Float NOT NULL ,
-                        idCommande Int NOT NULL
+                        idCommande Int NOT NULL,
+                        date            DATETIME NOT NULL
     ,CONSTRAINT facture_PK PRIMARY KEY (idFacture)
 )ENGINE=InnoDB;
 
@@ -136,15 +133,6 @@ ALTER TABLE Commande
     ADD CONSTRAINT Commande_Clients0_FK
         FOREIGN KEY (idClient)
             REFERENCES Clients(idClient);
-
-ALTER TABLE Commande
-    ADD CONSTRAINT Commande_facture1_FK
-        FOREIGN KEY (idFacture)
-            REFERENCES facture(idFacture);
-
-ALTER TABLE Commande
-    ADD CONSTRAINT Commande_facture0_AK
-        UNIQUE (idFacture);
 
 ALTER TABLE facture
     ADD CONSTRAINT facture_Commande0_FK

@@ -107,11 +107,17 @@ class SuperControleur
             case "deleteprod" :
                 if(!empty($_SESSION['panier'])){
                     include_once "DAO/DeleteProdDAO.php";
-                    if(!empty($_SESSION['panier'])){
                         DeleteProdDAO::deleteprod($_GET['id']);
-                    }
-                    header("Location: index.php?page=accueil");
                 }
+                header("Location: index.php?page=accueil");
+                break;
+            case "commander" :
+                if(!empty($_SESSION['panier'])) {
+                    include_once "pages/commande/ControleurCommande.php";
+                    $commande = new ControleurCommande();
+                    $commande->createCommand($_SESSION['idClient']);
+                }
+                //header("Location: index.php?page=accueil");
                 break;
 
 
