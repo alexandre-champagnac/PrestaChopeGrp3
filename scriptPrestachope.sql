@@ -18,8 +18,8 @@ CREATE TABLE Clients(
                         password Varchar (255) NOT NULL ,
                         mail     Varchar (100) NOT NULL ,
                         adresse  Varchar (50) NOT NULL ,
-                        cagnotte Float NOT NULL DEFAULT(500) ,
-                        isAdmin  Int NOT NULL DEFAULT(0)
+                        cagnotte Float NOT NULL DEFAULT 500 ,
+                        isAdmin  Int NOT NULL DEFAULT 0
     ,CONSTRAINT Clients_PK PRIMARY KEY (idClient)
 )ENGINE=InnoDB;
 
@@ -152,3 +152,15 @@ ALTER TABLE ProduitCommande
     ADD CONSTRAINT ProduitCommande_Commande1_FK
         FOREIGN KEY (idCommande)
             REFERENCES Commande(idCommande);
+
+
+INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
+VALUES ('Chouffe', '8', '50', 'assets/img/chouffe.png', 'une chouffe de region','1');
+
+INSERT INTO Produit (nom, prix, quantite, photo, description,idCategorie)
+VALUES ('Blonde', '8', '50', 'assets/img/blonde.png', 'une chouffe de region','1');
+
+
+
+
+
