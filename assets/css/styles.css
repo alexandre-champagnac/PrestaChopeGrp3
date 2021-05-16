@@ -564,3 +564,18 @@ img{
 .categorie{
   display:flex;
 }
+.admin
+{
+  margin-top: 100px;
+  margin-left: 500px;
+}
+.listeUser
+{
+  margin-top: 100px;
+  margin-left: 500px;
+}
+.addProduit
+{
+  margin-top: 100px;
+  margin-left: 500px;
+}
