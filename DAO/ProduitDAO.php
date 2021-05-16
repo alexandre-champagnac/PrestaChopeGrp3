@@ -76,6 +76,7 @@ class ProduitDAO
 
 
     public static function imgProduit($image) {
+        $_FILES['importation']=$image;
         var_dump($image);
         $dossier = 'assets/img';
         $fichier = basename($_FILES['importation']['name']);
