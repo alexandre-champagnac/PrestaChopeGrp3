@@ -18,8 +18,8 @@ CREATE TABLE Clients(
                         password Varchar (255) NOT NULL ,
                         mail     Varchar (100) NOT NULL ,
                         adresse  Varchar (50) NOT NULL ,
-                        cagnotte Float NOT NULL DEFAULT(500) ,
-                        isAdmin  Int NOT NULL DEFAULT(0)
+                        cagnotte Float NOT NULL DEFAULT 500 ,
+                        isAdmin  Int NOT NULL DEFAULT 0
     ,CONSTRAINT Clients_PK PRIMARY KEY (idClient)
 )ENGINE=InnoDB;
 
