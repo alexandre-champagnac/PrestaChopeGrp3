@@ -1,5 +1,5 @@
 <?php
-    $listeUser = ControllerListeUser::listeUser;
+    $listeUser = ControllerListeUser::listeUser();
     foreach ($listeUser as $value)
     {
         echo $value['pseudo'];

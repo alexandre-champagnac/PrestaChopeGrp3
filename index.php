@@ -64,7 +64,7 @@
                 <?php }
                 if(!empty($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1){ ?>
                     <li class="nav__item"><a href="index.php?page=addProduit" class="nav__link">Ajouter un nouveaux Produit</a></li>
-                    <li class="nav__item"><a href="index.php?page=ListeUser" class="nav__link">ListeUser</a></li>
+                    <li class="nav__item"><a href="index.php?page=ListeUser" class="nav__link">Liste des utilisateur</a></li>
                 <?php }} ?>
 
 
