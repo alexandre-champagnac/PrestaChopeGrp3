@@ -83,5 +83,12 @@ class ClientDAO
         $reponse = $bdd->prepare('UPDATE clients SET password = ? WHERE idClient = ?');
         $reponse->execute(array(sha1($password),$id));
     }
-
+    public function listeUser()
+    {
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare('SELECT pseudo FROM clients');
+        $reponse->execute(array($recherche));
+        $result = $reponse->fetchAll();
+        return $result;
+    }
 }

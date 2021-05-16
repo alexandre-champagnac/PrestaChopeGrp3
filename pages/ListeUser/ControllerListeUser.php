@@ -8,6 +8,6 @@ class ControllerListeUser
         include_once "pages/ListeUser/ListeUser.php";
     }
     public function listeUser(){
-        ClientDAO::listeUser();
+       return ClientDAO::listeUser();
     }
 }
