@@ -148,6 +148,7 @@ class SuperControleur
                 {
                     $instance4->addProduit($_POST['nomProduit'],$_POST['prixProduit'],$_POST['quantiteProduit'],$_POST['descProduit'],$_POST['idCategorie'],$_POST['importation']);
                 }
+                header("Location: index.php?page=accueil");
                 break;
 
 
