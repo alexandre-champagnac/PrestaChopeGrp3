@@ -563,4 +563,16 @@ img{
 }
 .categorie{
   display:flex;
+  align-items: center;
+}
+
+.categorie a{
+  color: var(--first-color);
+  margin: 10px;
+  text-decoration: none;
+}
+
+.categorie p{
+  margin-left: 20px;
+  font-size: 20px;
 }
