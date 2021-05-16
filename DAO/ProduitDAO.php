@@ -73,4 +73,11 @@ class ProduitDAO
         $reponse = $bdd->prepare('UPDATE produit SET prix = ?, nom = ?,photo = ?, quantite = ? WHERE idProduit = ?');
         $reponse->execute(array($produit->getPrix, $produit->getNom, $produit->getPhoto, $produit->getQuantite, $produit->getIdProduit, $produit->getDescription));
     }
+
+    public function addProduit($nom,$prix,$quantite,$desc)
+    {
+        $bdd = DatabaseLinker::getConnexion();
+        $reponse = $bdd->prepare("INSERT INTO produit (nom,prix,quantite,description) value  ('?','?','?','?')");
+        $reponse->execute(array($nom,$prix,$quantite,$desc));
+    }
 }

@@ -32,7 +32,12 @@
 ?>
 <!--========== Le header ==========-->
 <header class="l-header" id="header">
-
+    <?php
+    if($page == "addProduit")
+    {
+        SuperControleur::callPage($page);
+    }
+    ?>
 
     <nav class="nav bd-container">
         <a href="#" class="nav__logo">PrestaChope3</a>
@@ -53,6 +58,7 @@
                     <li class="nav__item"><a href="index.php?page=compte" class="nav__link">Modifier Profil</a></li>
                 <?php }
                 if(!isset($_SESSION['idClient']) && $page != 'inscription'){ ?>
+                    <li class="nav__item"><a href="index.php?page=addProduit" class="nav__link">listeUser</a></li>
                     <li class="nav__item"><a href="index.php?page=connexion" class="nav__link">Connexion</a></li>
                     <li class="nav__item"><a href="index.php?page=inscription" class="nav__link">Inscription</a></li>
                 <?php }

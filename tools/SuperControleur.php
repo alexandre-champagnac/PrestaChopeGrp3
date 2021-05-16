@@ -119,7 +119,14 @@ class SuperControleur
                 }
                 //header("Location: index.php?page=accueil");
                 break;
-
+            case "addProduit" :
+                include_once "pages/addProduit/ControllerAddProduit.php";
+                $instance4 = new ControllerAddProduit();
+                $instance4->includeView();
+                if(!empty($_POST['nomProduit']) && !empty($_POST['prixProduit']))
+                {
+                    $instance4->addProduit($_POST['nomProduit'],$_POST['prixProduit'],$_POST['quantiteProduit'],$_POST['descProduit']);
+                }
 
         }
     }
