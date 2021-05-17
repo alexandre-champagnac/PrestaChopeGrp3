@@ -21,7 +21,7 @@ $produit = ProduitDAO::getProduitById($_GET['id']);
         <div class="AlignPanier">
             <div class="prix">
                 <p>Prix :</p>
-                <p class="ParaPrix"><?php echo $produit->getPrix(); ?></p>
+                <p class="ParaPrix"><?php echo $produit->getPrix(); ?> €</p>
             </div>
         </div>
         <div>
@@ -29,13 +29,13 @@ $produit = ProduitDAO::getProduitById($_GET['id']);
             <p><?php echo $produit->getDescription(); ?></p>
         </div>
     </div>
-    <?php  if(!empty($_SESSION['idClient'] && $_SESSION['isAdmin'] == 0)){ ?>
+    <?php  if(!empty($_SESSION['idClient']) && $_SESSION['isAdmin'] == 0){ ?>
     <form method="post" action="index.php?page=ajoutproduit">
         <input type="hidden" name="id" value="<?php echo $produit->getIdProduit() ;?>">
         <input type="number" min="1" max="<?php echo $produit->getQuantité(); ?>" name="quantite" placeholder="quantité">
         <input type="submit" value="Ajouter au panier">
     </form>
-    <?php }if ($_SESSION['isAdmin'] == 1){ ?>
+    <?php }if (!empty($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 1){ ?>
         <button><a href="index.php?page=modifier&id=<?php echo $produit->getIdProduit(); ?>">modifier le produit</a></button>
     <?php } ?>
 
