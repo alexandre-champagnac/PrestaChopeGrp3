@@ -1,20 +1,29 @@
-===================================PROJET PRESTACHOPE GROUPE 3==================================
+=======================PROJET PRESTACHOPE===================
 
-#====PRESENTATION
+# PRESENTATION
 Prestachoppe est un site d'E-Commerce pour un bar à bière, permettant de passer commande avant arrivée au bar.
 On y trouve un variété de boissons et d'encas diversifiés.
 
-#====LANGUAGES UTILISES====
+
+## LANGUAGES UTILISES
 PHP en majorité
 JS pour les animations
 HTML/CSS pour la structure
 MYSQL pour les bases de données
 
-#====OBJECTIF DU PROJET====
+## BASE DE DONNEE
+Un script sql est fourni en voila un extrait
+
+```bash
+DROP DATABASE IF EXISTS prestachope3;
+CREATE DATABASE prestachope3;
+USE prestachope3;
+```
+## OBJECTIF DU PROJET
 Projet de groupe dans le cadre d'une première année de BTS SIO au lycée GodeFroy de Bouillon. Accroître les
 compétences en language du web en général.
 
-#====DETAILS====
+## DETAILS
 
 /Page Accueil/
 Presente le bar et la liste des produits pouvant être triés par catégories
@@ -38,7 +47,7 @@ Permet de modifier les informations de compte
 Permet de se connecter et de s'inscrire.
 
 
-#====REMERCIEMENT====
+## REMERCIEMENT
 Merci à l'équipe pour le travail efficace et surtout l'ambiance positive qui a émané du travail de groupe
 
 Credits :
