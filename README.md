@@ -11,7 +11,7 @@ JS pour les animations
 HTML/CSS pour la structure
 MYSQL pour les bases de données
 
-## BASE DE DONNEE
+## BASE DE DONNEES
 Un script sql est fourni en voila un extrait
 
 ```bash
