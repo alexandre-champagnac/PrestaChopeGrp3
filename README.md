@@ -46,9 +46,12 @@ Permet de modifier les informations de compte
 /Pages Connexion/Inscription /
 Permet de se connecter et de s'inscrire.
 
+/MCD/
+Le Mcd est disponible à la racine au format .mcd et au format .png (le format png étant le plus récent)
 
 ## REMERCIEMENT
 Merci à l'équipe pour le travail efficace et surtout l'ambiance positive qui a émané du travail de groupe
+
 
 Credits :
 
